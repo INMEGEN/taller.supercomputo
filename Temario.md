@@ -2,7 +2,7 @@
 ---
 
 
-Línea de comandos (13 de junio). Hugo
+1. Línea de comandos (13 de junio). Hugo
 
 - Qué es la línea de comandos.
 
@@ -14,7 +14,7 @@ Línea de comandos (13 de junio). Hugo
 
 - SSH, sshfs, rsync.
 
-Seguridad/Confidencialidad de la información (15 de junio). Joshua
+2. Seguridad/Confidencialidad de la información (15 de junio). Joshua
 
 - Integridad de datos.
 
@@ -26,13 +26,13 @@ Seguridad/Confidencialidad de la información (15 de junio). Joshua
 
 - Uso de gestor de contraseñas.
 
-Bioinformática automática y reproducible con mk (20 y 22 de junio). Hugo y Joshua
+3. Bioinformática automática y reproducible con mk (20 y 22 de junio). Hugo y Joshua
 
 - Receta básica: objetivo y prerrequisitos.
 
 - Depurar errores.
 
-Clúster del INMEGEN @ROGUE1 (27 de junio). Toba
+4. Clúster del INMEGEN @ROGUE1 (27 de junio). Toba
 
 - Infraestructura
 
@@ -46,7 +46,7 @@ Clúster del INMEGEN @ROGUE1 (27 de junio). Toba
 
 - Depurar errores.
 
-Buenas Prácticas de desarrollo en investigación (29 de junio y  4, 6 y 11 de julio). Joshua
+5. Buenas Prácticas de desarrollo en investigación (29 de junio y  4, 6 y 11 de julio). Joshua
 
 - Gestión de proyectos de investigación.
 
@@ -64,7 +64,7 @@ Buenas Prácticas de desarrollo en investigación (29 de junio y  4, 6 y 11 de 
 
 - Resolución de conflictos. 
 
-Herramientas en el clúster (13 y 18 de julio). 
+6. Herramientas en el clúster (13 y 18 de julio). 
 
 - Cómo hacer pipelines con mk.
 
