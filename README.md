@@ -48,7 +48,7 @@ Laptop con los siguientes requerimientos:
 
 - Sistema tipo UNIX (GNU/Linux o Mac, BSD).
 - Cuenta en [GitHub](https://github.com/)
-- Si usan windows: descargar [PuTTY](http://www.putty.org/) y [WinSCP](https://winscp.net/eng/download.php).
+- Si usan windows: descargar [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) y [WinSCP](https://winscp.net/eng/download.php).
 
 
 ## Requerimientos técnicos de infraestructura:
