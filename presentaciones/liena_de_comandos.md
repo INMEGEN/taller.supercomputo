@@ -106,10 +106,11 @@ $ ls /
 
 ```
 $ cd
-$ cd ~
 $ ls
 $ cd /
 $ ls ~
+$ cd ~
+$ ls
 ```
 
    - Directorio de trabajo `.`: El punto representa el directorio en el que estamos parados
@@ -125,6 +126,14 @@ $ ls ..
 $ cd ..
 $ ls 
 ```
+
+  - Listado en formato largo con `ls -l`:
+
+![Listado largo](../imagenes/ls_-l.png)
+
+  - Permisos de archivos
+
+![Permisos de archivos](../imagenes/file-permissions.jpg)  
 
 
 ***mkdir*** (make directory) crea carpetas.
@@ -211,30 +220,38 @@ $ tail alumnos.txt | less -S
 $ tail  -n +2 alumnos.txt | less -S
 ```
 
+```
+$ cut -f1 alumnos.txt | tail  -n +2 | less
+```
+
 
 ```
-$ cut -f1 alumnos.txt | tail  -n +2| sort | less
+$ cut -f1 alumnos.txt | tail  -n +2 | sort | less
 ```
 
 
 ***sed*** (stream editor) sed es un poderoso programa que sustituye caracteres en archivos de texto.
 
 ```
+$ sed -e 's/Female/MUJER/' alumnos.txt | less -S
+```
+
+```
 $ cut -f1,4 alumnos.txt | tail  -n +2 | sort | less
 ```
 
 ```
-$ cut -f1,4 alumnos.txt | tail  -n +2 | sort | sed -e 's/Female/Mujer/'|less
+$ cut -f1,4 alumnos.txt | tail  -n +2 | sort | sed -e 's/Female/Mujer/' | less
 ```
 
 ```
-$ cut -f1,4 alumnos.txt | tail  -n +2 | sort | sed -e 's/Female/Mujer/' -e 's/Male/Hombre/' |less
+$ cut -f1,4 alumnos.txt | tail  -n +2 | sort | sed -e 's/Female/Mujer/' -e 's/Male/Hombre/' | less
 ```
 
 ***>*** salva a archivo la salida estándar.
 
 ``` 
-$ cut -f1,4 alumnos.txt | tail  -n +2 | sort | sed -e 's/Female/Mujer/' -e 's/Male/Hombre/' |less > alumnos_col_1_4_uniq.txt
+$ cut -f1,4 alumnos.txt | tail  -n +2 | sort | sed -e 's/Female/Mujer/' -e 's/Male/Hombre/' > alumnos_col_1_4.txt
 ```
 
 ```
@@ -243,87 +260,116 @@ $ ls
 
 
 ```
-$ less alumnos_col_1_4_uniq.txt
+$ less alumnos_col_1_4.txt
 ```
 
 ***uniq*** busca repetidos en una lista ordenada.
 
 ```
-$ uniq alumnos_col_1_4_uniq.txt |less
+$ uniq alumnos_col_1_4.txt |less
 ```
 
+```
+$ cut -f2 alumnos_col_1_4.txt | less
+```
 
 ```
-$ cut -f2 alumnos_col_1_4_uniq.txt | uniq
+$ cut -f2 alumnos_col_1_4.txt | uniq
 ```
 
 uniq requiere que los renglones estén ordenados ya que detecta renglones contiguos.
 
 ```
-$ cut -f2 alumnos_col_1_4_uniq.txt | sort | uniq
+$ cut -f2 alumnos_col_1_4.txt | sort | uniq
 ```
 
 ```
-$ cut -f2 alumnos_col_1_4_uniq.txt | sort | uniq -c 
+$ cut -f2 alumnos_col_1_4.txt | sort | uniq -c 
 ```
 
 ***wc*** (word count) cuenta el número de palabras y de renglones.
 
 ```
-$ cut -f2 alumnos_col_1_4_uniq.txt | wc -l
-```
-```
-$ cut -f2 alumnos_col_1_4_uniq.txt | sort | uniq | wc -l
-```
-
-
-***grep*** (get all lines matching the regular expression and print (g/re/p)) es un programa para buscar cadenas de texto dentro de un archivo.
-
-```
-$ grep "Diego" alumnos_col_1_4_uniq.txt | less
+$ wc alumnos_col_1_4.txt alumnos.txt
 ```
 
 ```
-$ grep "José" alumnos_col_1_4_uniq.txt | wc -l
+$ wc -l alumnos_col_1_4.txt alumnos.txt
 ```
 
 ```
-$ grep "José" alumnos_col_1_4_uniq.txt > pepes.txt`
+$ cut -f2 alumnos_col_1_4.txt | wc -l
+```
+
+```
+$ cut -f2 alumnos_col_1_4.txt | sort -u | wc -l
+```
+
+
+***grep*** (get all lines matching the regular expression and print (g/re/p)) es una herramienta muy poderosa para buscar cadenas de texto dentro de un archivo. Está pensado para trabajar con expresiones regulares (que no trataremos en este curso).
+
+```
+$ grep "Paulina" alumnos.txt
+```
+```
+$ grep "^Paulina" alumnos.txt
+```
+
+```
+$ grep "José" alumnos_col_1_4.txt
+```
+
+```
+$ grep "José" alumnos_col_1_4.txt | wc -l
+```
+
+```
+$ grep "José" alumnos_col_1_4.txt > pepes.txt
 ```
 
 ```
 $ cat pepes.txt
 ```
 ```
-$ cat alumnos_col_1_4_uniq.txt pepes.txt
+$ cat alumnos_col_1_4.txt pepes.txt
 ```
 
 ***paste*** (pegar) pega columnas una contigua a la otra
 
 ```
-$ paste alumnos_col_1_4_uniq.txt pepes.txt | less
+$ paste alumnos_col_1_4.txt pepes.txt | less
 ```
 
 ```
-$ paste alumnos_col_1_4_uniq.txt alumnos_col_1_4_uniq.txt | less
+$ paste alumnos_col_1_4.txt alumnos_col_1_4.txt | less
 ```
 
 ***mv*** (move) comando que sirve para mover o renombrar y archivo o carpeta.
 
 ```
-$ mv pepes.txt joses.txt
+$ ls -l
+```
+
+
+```
+$ mv pepes.txt joseses.txt
 ```
 
 ```
-$ cat joses.txt
+$ ls -l
 ```
 
 ```
-$ mv ../joses.txt
+$ cat joseses.txt
+```
+
+```
+$ mv joseses.txt ..
 ```
 ```
 $ ls 
 $ ls ..
+$ cd ..
 ```
 
 
