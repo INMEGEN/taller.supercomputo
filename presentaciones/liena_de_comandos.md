@@ -130,10 +130,11 @@ $ ls
 ***mkdir*** (make directory) crea carpetas.
 
 ```
-$ mkdir datos
+$ cd
+$ mkdir datos.taller
 ```
 ```
-$ cd datos
+$ cd datos.taller
 ```
 ```
 $ ls
@@ -141,10 +142,9 @@ $ ls
 ***wget*** (www get) Es un programa para descargar archivos de internet.
 
 ```
-$ wget https://raw.githubusercontent.com/hachepunto/GNU_Linux_connecting_tools/master/data/niklas_biomass_20040122.txt
+$ wget "https://raw.githubusercontent.com/INMEGEN/taller.supercomputo/master/data/alumnos.txt"
 ```
 
-wget es un poderoso programa con muchas opciones que pueden descubrir con  `man wget`.
 
 ```
 $ ls
@@ -152,14 +152,19 @@ $ ls
 ***cat*** (concatenate) sirve para concatenar archivos uno tras.
 
 ```
-$ cat niklas_biomass_20040122.txt
+$ cat alumnos.txt
 ```
 
 ***less*** es un paginador para ver archivos.
 
 ```
-$ less niklas_biomass_20040122.txt
+$ less alumnos.txt
 ```
+
+Dentro de `less` puedes usar el comando `/` para buscar tu nombre por ejemplo.
+
+Para salir de `less` preciona la tecla `Q` 
+
 ***man*** (manual) es un programa que muestra los manuales de los programas.
 
 ```
@@ -168,56 +173,157 @@ $ man less
 Las páginas de manuales son documentación acerca de los comandos y programas que tiene el sistema. Tienen una estructura constante lo que nos ayuda a ubicar la información que necesitamos más facilmente.
 
 ```
-$ less -S niklas_biomass_20040122.txt
+$ less -S alumnos.txt
 ```
 ***cut*** Corta por columnas un archivo.
 
 ```
-$ cut -f1 niklas_biomass_20040122.txt
+$ cut -f1 alumnos.txt
 ```
-***pipe*** ( **|** ) es un método para encadenar programas de tal modo que la salida de uno es la entrada del que sigue. Se usa una barra vertical para separar los programas a usar.
+**|**  ( **pipe** o tubería ) es un método para encadenar programas de tal modo que la salida de uno es la entrada del que sigue. Se usa una barra vertical para separar los programas a usar.
 
 ```
-$ cut -f1 niklas_biomass_20040122.txt | less
+$ cut -f1 alumnos.txt | less
 ```
+
+Las pipes (o tuberías) son una de las herramientas más poderosas de la interface de linea de comandos. Nos permite operar con diferentes herramientas sobre un mismo conjunto de información sin modificar el archivo que contiene nuestros datos.
+
+
 ***sort*** ordena listas.
 
+```
+$ sort alumnos.txt | less -S
+```
+
+
 ``` 
-$ cut -f1 niklas_biomass_20040122.txt | sort | less
-```
-***uniq*** busca repetidos en una lista ordenada.
-
-```
-$ cut -f1 niklas_biomass_20040122.txt | sort | uniq |less
+$ cut -f1 alumnos.txt | sort | less
 ```
 
-```
-$ cut -f1,5 niklas_biomass_20040122.txt | sort | uniq |less
-```
-***wc*** (word count) cuenta el número de palabras y de renglones.
+***tail*** (final) muestra el final de un archivo.
 
 ```
-$ cut -f1,5 niklas_biomass_20040122.txt | sort | uniq | wc -l
+$ tail alumnos.txt | less -S
 ```
+
+
 ```
-$ cut -f1,5 niklas_biomass_20040122.txt | sort | wc -l
+$ tail  -n +2 alumnos.txt | less -S
 ```
+
+
+```
+$ cut -f1 alumnos.txt | tail  -n +2| sort | less
+```
+
+
+***sed*** (stream editor) sed es un poderoso programa que sustituye caracteres en archivos de texto.
+
+```
+$ cut -f1,4 alumnos.txt | tail  -n +2 | sort | less
+```
+
+```
+$ cut -f1,4 alumnos.txt | tail  -n +2 | sort | sed -e 's/Female/Mujer/'|less
+```
+
+```
+$ cut -f1,4 alumnos.txt | tail  -n +2 | sort | sed -e 's/Female/Mujer/' -e 's/Male/Hombre/' |less
+```
+
 ***>*** salva a archivo la salida estándar.
 
 ``` 
-$ cut -f1,5 niklas_biomass_20040122.txt | sort | uniq > niklas_col_1_5_uniq.txt
+$ cut -f1,4 alumnos.txt | tail  -n +2 | sort | sed -e 's/Female/Mujer/' -e 's/Male/Hombre/' |less > alumnos_col_1_4_uniq.txt
+```
+
+```
+$ ls
+```
+
+
+```
+$ less alumnos_col_1_4_uniq.txt
+```
+
+***uniq*** busca repetidos en una lista ordenada.
+
+```
+$ uniq alumnos_col_1_4_uniq.txt |less
+```
+
+
+```
+$ cut -f2 alumnos_col_1_4_uniq.txt | uniq
+```
+
+uniq requiere que los renglones estén ordenados ya que detecta renglones contiguos.
+
+```
+$ cut -f2 alumnos_col_1_4_uniq.txt | sort | uniq
+```
+
+```
+$ cut -f2 alumnos_col_1_4_uniq.txt | sort | uniq -c 
+```
+
+***wc*** (word count) cuenta el número de palabras y de renglones.
+
+```
+$ cut -f2 alumnos_col_1_4_uniq.txt | wc -l
 ```
 ```
-$ less niklas_col_1_5_uniq.txt
+$ cut -f2 alumnos_col_1_4_uniq.txt | sort | uniq | wc -l
 ```
+
 
 ***grep*** (get all lines matching the regular expression and print (g/re/p)) es un programa para buscar cadenas de texto dentro de un archivo.
 
 ```
-$ grep Abies niklas_col_1_5_uniq.txt | less
+$ grep "Diego" alumnos_col_1_4_uniq.txt | less
+```
+
+```
+$ grep "José" alumnos_col_1_4_uniq.txt | wc -l
+```
+
+```
+$ grep "José" alumnos_col_1_4_uniq.txt > pepes.txt`
+```
+
+```
+$ cat pepes.txt
 ```
 ```
-$ grep Abies niklas_col_1_5_uniq.txt > abies.txt`
+$ cat alumnos_col_1_4_uniq.txt pepes.txt
+```
+
+***paste*** (pegar) pega columnas una contigua a la otra
+
+```
+$ paste alumnos_col_1_4_uniq.txt pepes.txt | less
+```
+
+```
+$ paste alumnos_col_1_4_uniq.txt alumnos_col_1_4_uniq.txt | less
+```
+
+***mv*** (move) comando que sirve para mover o renombrar y archivo o carpeta.
+
+```
+$ mv pepes.txt joses.txt
+```
+
+```
+$ cat joses.txt
+```
+
+```
+$ mv ../joses.txt
+```
+```
+$ ls 
+$ ls ..
 ```
 
 
