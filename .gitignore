@@ -32,9 +32,6 @@ vignettes/*.pdf
 *.utf8.md
 *.knit.md
 
-data
-results
-
 *.DS_Store
 .AppleDouble
 .LSOverride
