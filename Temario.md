@@ -26,7 +26,7 @@
 
   - Uso de gestor de contraseñas.
 
-### 3. Bioinformática automática y reproducible con mk (20 y 22 de junio, Hugo y Joshua).
+### 3. Bioinformática automática y reproducible con mk (20 y 22 de junio, Hugo y Joshua).
 
   - Receta básica: objetivo y prerrequisitos.
 
