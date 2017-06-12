@@ -1,42 +1,7 @@
 # Interface de línea de comandos
 
 
-## Preámbulo
 
-¡Vamos a conectarnos @ROGUE1!
-
-1. Abre la terminal si estás en GNU/Linux o MacOSX o PuTTY si estás en Windows.
-
-2. Conéctate a esta dirección IP:
-
-```
-192.168.105.221
-```
-
-  - En GNU/Linux y MacOSX teclea:
-
-```
-$ ssh <usuario>@castillo
-```
-
-o
-
-```
-$ ssh <usuario>@192.168.105.221
-```
-
-    
-Teclea tu contraseña (parecerá que no se está escribiendo nada) y da enter de nuevo
-
-
-  - En Windows abre PuTTY pon el IP en el campo que dice "Host Name (or IP address)" 
-    - Clickea en "Open".  
-    - Luego teclea tu nombre de usuario, da enter 
-    - Teclea tu contraseña (parecerá que no se está escribiendo nada) y da enter de nuevo.
-
-####¡Ya estas usando el Clúster del INMEGEN!
-
-## ¿Qué es una linea de comandos?
 
 La **[Interface de línea de comandos](http://en.wikipedia.org/wiki/Command-line_interface)** (CLI) es un **método para interactuar** con un programa o sistema operativo de computadora que permite al usuario dar órdenes al programa **en forma de lineas de texto** sucesivas (líneas de comando). 
 
@@ -372,6 +337,10 @@ $ ls ..
 $ cd ..
 ```
 
+
+Regresemos a terminar la presentación anterior:
+
+## [OpenSSH](ssh.md)
 
 
 [Lista de comandos de UNIX en la Wikipedia](http://en.wikipedia.org/wiki/List_of_Unix_commands)
