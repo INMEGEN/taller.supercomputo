@@ -340,8 +340,11 @@ $ cd ..
 
 Regresemos a terminar la presentación anterior:
 
-## [OpenSSH](ssh.md)
+<p align="center"> 
+<big><b><a href="ssh.md">OpenSSH</a></b></big>
+</p>
 
 
+Más info:
 [Lista de comandos de UNIX en la Wikipedia](http://en.wikipedia.org/wiki/List_of_Unix_commands)
 

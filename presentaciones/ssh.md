@@ -1,22 +1,27 @@
 # OpenSSH
 
-## Preámbulo
 
 [**OpenSSH**](https://www.openssh.com/) (Open Secure Shell) o **SSH** es un conjunto de herramientas para la comunicación segura entre computadoras usando el protocolo ssh. **OpenSSH** fue desarrollado como alternativa libre y de código abierto a la implementación [SSH](https://www.ssh.com/ssh/protocol/) propietaria.
 **OpenSSH** es en realidad un conjunto de programas que ofrecen una alternativa a los protocolos de comunicación via red no encriptados como FTP.
 
 __¡Vamos a conectarnos @ROGUE1!__
 
-
 Conéctate a esta dirección:
 
-```
-castillo.cluster.inmegen.gob.mx
-```
-o, lo que es lo mismo, a esta IP `192.168.105.221`
+<p align="center"> 
+<big><tt>castillo.cluster.inmegen.gob.mx</tt></big>
+</p>
 
 
-### Si estás en GNU/Linux
+o, lo que es lo mismo, a esta IP:
+
+<p align="center"> 
+<big><tt>192.168.105.221</tt></big>
+</p>
+
+
+
+### Si estás en GNU/Linux o MacOSX
 
  
 1. Abre la terminal. 
@@ -48,15 +53,16 @@ o, lo que es lo mismo, a esta IP `192.168.105.221`
 4. Teclea tu contraseña (parecerá que no se está escribiendo nada) y da `enter` de nuevo.
 
 
-<p align="center"> 
+<p align="center">
 <big><b>¡Ya estas usando el Clúster del INMEGEN!</b></big>
 </p>
 
 
 
-## [***Byobu***](http://byobu.co/) 
 
-Byobu es un multiplexador de terminal. Sirve, entre otras cosas, para proteger el trabajo que hacemos en el cluster de posibles desconecciones inesperadas desde nuestra terminal. 
+## Byobu
+
+[Byobu](http://byobu.co/) es un multiplexador de terminal. Sirve, entre otras cosas, para proteger el trabajo que hacemos en el cluster de posibles desconecciones inesperadas desde nuestra terminal. 
  
 
 ```
@@ -80,10 +86,10 @@ Más atajos de teclado [aquí](http://byobu.co/documentation.html).
 
 Veamos que podemos hacer aquí. Ve a la siguiente presentación:
 
-## [Interface de línea de comandos](linea_de_comandos.md)
 
-
-
+<p align="center"> 
+<big><b><a href="linea_de_comandos.md">Interface de línea de comandos</a></b></big>
+</p>
 
 
 Salimos de Byobu.
@@ -98,50 +104,83 @@ Cerramos la coneción SSH
 $ exit
 ```
 
-Iniciamos la conección con las X activadas ("C" es de compresión). Los maqueros necesitan arrancar X11 o XQuartz.
+
+## rsync
+
+[rsync](https://rsync.samba.org/) es una utilidad para la eficiente transferencia y sincronización de archivos a travez de sistemas de cómputo. rsync se usa típicamente para sincronizar archivos y directorios entre dos sistemas distintos.
+
+Sintaxis general:
 
 ```
-$ ssh -XC <usuario>@192.168.41.92 -p XXX 
+rsync [OPTION] … SRC … [USER@]HOST:DEST
+rsync [OPTION] … [USER@]HOST:SRC [DEST]
 ```
 
-Arrancamos Rstudio
+Por ejemplo
+
 
 ```
-rstudio
+$ cd
+$ rsync -avz <usuario>@castillo.cluster.inmegen.gob.mx:datos.taller .
 ```
 
-```
-> setwd("~/ejercicioSSH")
-```
+
+## SSHFS
+
+[SSHFS](https://github.com/libfuse/sshfs) es un sistema de GNU/Linux (y otros sistemas operativos, como MacOSX o FreeBSD, gracias a la implementación FUSE) Desde una terminal parada en nuestra computadora
+
+#####En Linux:
+
++ **[sshfs](http://fuse.sourceforge.net/sshfs.html)**  [(Tutorial)](https://www.digitalocean.com/community/tutorials/how-to-use-sshfs-to-mount-remote-file-systems-over-ssh)
 
 ```
-> load("modAlt1.RData")
+$ sudo apt install sshfs
 ```
 
-```
-> plot(modAlt1,type="burn_in")
-```
+#####En Mac:
 
-Desde una terminal parada en nuestra computadora
++ **[SSHFS](https://github.com/libfuse/sshfs/releases)**
+
++ **[OSXFuse](https://osxfuse.github.io/)**
+
+#####En Windows:
+
++ **[win-sshfs](https://code.google.com/p/win-sshfs/)** sshfs para montar sistemas de archivos remotos en Win
+
+
+
 
 ```
 $ cd
 ```
 
 ```
-$ mkdir mirmecoleon
+$ mkdir rogue1
 ```
 
 ```
-$ sshfs <usuario>@192.168.41.92 ~/mirmecoleon -o local -o volname=mirmecoleon 
+$ sshfs <usuario>@castillo.cluster.inmegen.gob.mx: ~/rogue1 -o local -o volname=ROGUE1 
 ```
 
-Busca tu disco mirmecoleon.
+En GNU/Linux:
+
+```
+$ sshfs <usuario>@castillo.cluster.inmegen.gob.mx: ~/rogue1 
+```
+
+
+Busca tu disco ROGUE1.
 
 Para desmontar:
 
 ```
-$ fusermount -u mirmecoleon
+$ fusermount -u ~/rogue1
+```
+
+En Mac:
+
+```
+$ umount -u ~/rogue1
 ```
 
 O bien expulsa como siempre haces con un dispositivo externo.
