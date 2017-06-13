@@ -1,8 +1,8 @@
 # OpenSSH
 
 
-[**OpenSSH**](https://www.openssh.com/) (Open Secure Shell) o **SSH** es un conjunto de herramientas para la comunicación segura entre computadoras usando el protocolo ssh. **OpenSSH** fue desarrollado como alternativa libre y de código abierto a la implementación [SSH](https://www.ssh.com/ssh/protocol/) propietaria.
-**OpenSSH** es en realidad un conjunto de programas que ofrecen una alternativa a los protocolos de comunicación via red no encriptados como FTP.
+[**OpenSSH**](https://www.openssh.com/) (Open Secure Shell) o **ssh** es un conjunto de herramientas para la comunicación segura entre computadoras usando el protocolo [**SSH**](https://www.ssh.com/ssh/protocol/). **OpenSSH** fue desarrollado como alternativa libre y de código abierto a la implementación SSH propietaria.
+**OpenSSH** es en realidad un conjunto de programas que ofrecen una gran variedad de capacidades de hacer túneles seguros, muchos modos de autenticación y opciones de configuración sofisticada.
 
 __¡Vamos a conectarnos @ROGUE1!__
 
@@ -107,7 +107,7 @@ $ exit
 
 ## rsync
 
-[rsync](https://rsync.samba.org/) es una utilidad para la eficiente transferencia y sincronización de archivos a travez de sistemas de cómputo. rsync se usa típicamente para sincronizar archivos y directorios entre dos sistemas distintos.
+[rsync](https://rsync.samba.org/) es una utilidad para la transferencia y sincronización eficiente  de archivos a travez de sistemas de cómputo. rsync se usa típicamente para sincronizar archivos y directorios entre dos sistemas distintos.
 
 Sintaxis general:
 
@@ -129,7 +129,7 @@ $ rsync -avz <usuario>@castillo.cluster.inmegen.gob.mx:datos.taller .
 
 [SSHFS](https://github.com/libfuse/sshfs) es un sistema de GNU/Linux (y otros sistemas operativos, como MacOSX o FreeBSD, gracias a la implementación FUSE) Desde una terminal parada en nuestra computadora
 
-#####En Linux:
+**En Linux:**
 
 + **[sshfs](http://fuse.sourceforge.net/sshfs.html)**  [(Tutorial)](https://www.digitalocean.com/community/tutorials/how-to-use-sshfs-to-mount-remote-file-systems-over-ssh)
 
@@ -137,18 +137,18 @@ $ rsync -avz <usuario>@castillo.cluster.inmegen.gob.mx:datos.taller .
 $ sudo apt install sshfs
 ```
 
-#####En Mac:
+**En Mac:**
 
 + **[SSHFS](https://github.com/libfuse/sshfs/releases)**
 
 + **[OSXFuse](https://osxfuse.github.io/)**
 
-#####En Windows:
+**En Windows:**
 
-+ **[win-sshfs](https://code.google.com/p/win-sshfs/)** sshfs para montar sistemas de archivos remotos en Win
++ **[win-sshfs](https://code.google.com/p/win-sshfs/)**
 
 
-
+### Demostación:
 
 ```
 $ cd
