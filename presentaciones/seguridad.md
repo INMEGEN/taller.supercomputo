@@ -97,7 +97,7 @@ Host *
 
 # Usar la clave pública de inmegen dentro del INMEGEN
 Host    *.inmegen.gob.mx
-    UserName	alumnoXX
+    User	alumnoXX
     IdentityFile    ~/.ssh/inmegen
 ```
 
