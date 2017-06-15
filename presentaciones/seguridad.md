@@ -9,10 +9,10 @@ date: 2017-06-15
 ## Seguridad Informática
 
 Confiabilidad
-: Sólo las personas correctas pueden acceder y modificar los datos.
+: Sólo las personas autorizadas pueden acceder y modificar los datos.
 
 Confidencialidad
-: Sólo las personas correctas pueden acceder a los datos.
+: Sólo las personas autorizadas pueden acceder a los datos.
 
 Integridad de datos
 : Los datos que se muestran son los correctos.
@@ -27,15 +27,24 @@ Integridad de datos
 
 - Algo que soy (huellas biométricas).
 
+## Contraseña
+
+Una contraseña es más fuerte mientras más grande sea el espacio de búsqueda.
+Una buena contraseña es:
+
+- Larga.
+- Aleatoria.
+- Única.
+
 ## Contraseñas
 
-![Dos esquemas de contraseñas.](http://imgs.xkcd.com/comics/password_strength.png) \
-
-## Más acerca de contraseñas
-
-https://blog.hubspot.com/hs-fs/hubfs/password-stats-infographic.jpg?t=1497478617668&width=669&height=5027&name=password-stats-infographic.jpg
+![Dos esquemas de contraseñas.](http://imgs.xkcd.com/comics/password_strength.png)
 
 ## Uso de gestor de contraseñas
+
+![](http://keepass.info/screenshots/keepass_2x/main_big.png)
+
+<http://keepass.info>
 
 # Llaves criptográficas (clave pública y privada)
 
@@ -43,8 +52,11 @@ https://blog.hubspot.com/hs-fs/hubfs/password-stats-infographic.jpg?t=1497478617
 
 Se generan un par de llaves:
 
-![Clave pública](https://image.flaticon.com/icons/svg/1/1213.svg){width=5cm}
-[Clave privada](https://cdn3.iconfinder.com/data/icons/wpzoom-developer-icon-set/500/104-512.png){width=5cm}
+![Clave pública](/home/joshpar/src/github.com/INMEGEN/taller.supercomputo/imagenes/candado.png){width=5cm}
+![Clave privada](https://cdn3.iconfinder.com/data/icons/wpzoom-developer-icon-set/500/104-512.png){width=5cm}\
+```
+      Clave pública                    Clave privada
+```
 
 ## Generar el par de llaves
 
@@ -60,13 +72,42 @@ ssh-keygen \
 	-t rsa \
 	-b 4096 \
 	-C "`whoami`@`hostname`" \
-	-f ~/.ssh/inmegen
+	-f ~/.ssh/"`whoami`@`hostname`"
+```
+
+## Configurar el cliente ssh
+
+```
+gedit ~/.ssh/config
+```
+
+```
+Host *
+    # Evitar que se desconecte la computadora
+    ServerAliveInterval 100
+    TCPKeepAlive    yes
+
+    # Buscar los servidores en estos dominios
+    CanonicalDomains        cluster.inmegen.gob.mx  inmegen.gob.mx
+    CanonicalizeHostname    yes
+
+    # Mostrar un identificador del servidor
+    VisualHostKey   yes
+```
+
+## Configurar el cliente ssh
+
+```
+
+# Usar la clave pública de inmegen dentro del INMEGEN
+Host    *.inmegen.gob.mx
+    UserName	[usuario]
+    IdentityFile    ~/.ssh/[usuario]@inmegen
 ```
 
 ## Generar el par de llaves (putty)
 
 https://www.howtoforge.com/ssh_key_based_logins_putty
-
 
 # Confidencialidad
 
@@ -107,8 +148,11 @@ permisos     usuario grupo
 
 Los archivos en UNIX tienen:
 
-- usuario ¿De quién son los archivos?
-- grupo ¿Quiénes más tienen acceso extra?
+usuario
+: ¿De quién son los archivos?
+
+grupo
+: ¿Quiénes más tienen acceso extra?
 
 ## Ejemplo de permisos
 
@@ -125,11 +169,17 @@ Los archivos en UNIX tienen:
 ## chmod, chgrp
 
 
+## Cifrado
 
+Más allá del alcance de este taller.
 
-# Confiabilidad
+# Integridad
 
-## ¿La información que tengo es la misma que me entregaron?
+## ¿La información que tengo es la misma que me enviaron?
 
 - Errores en transmisión.
 - Usuario malicioso.
+
+---
+
+https://blog.hubspot.com/hs-fs/hubfs/password-stats-infographic.jpg?t=1497478617668&width=669&height=5027&name=password-stats-infographic.jpg
