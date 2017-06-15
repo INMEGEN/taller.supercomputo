@@ -109,6 +109,12 @@ Host    *.inmegen.gob.mx
 
 https://www.howtoforge.com/ssh_key_based_logins_putty
 
+## ¿Funcionó el uso de claves?
+
+```
+ssh castillo
+```
+
 # Confidencialidad
 
 ## Hay 3 permisos
@@ -166,19 +172,95 @@ grupo
  755           rwx       r-x       r-x
 ----------------------------------------
 
-## chmod, chgrp
+## Cambiar permisos (`chmod`)
 
+Para cambiar los permisos se utiliza `chmod` (change mode):
+
+```
+# Dar permisos de sólo de lectura y escritura al usuario
+chmod u=rw,go-rwx archivo.txt
+
+# Dar permisos sólo de lectura y escritura al usuario
+chmod 600 archivo.txt
+```
+
+**Sólo el dueño puede cambiar los permisos de los archivos.**
+
+## Cambiar grupo
+
+Para cambiar los permisos se utiliza `chmod` (change mode):
+
+```
+# Ver los grupos a los que se pertenece
+$ id alumno1
+uid=5051(alumno1) gid=9028(taller) groups=9028(taller)
+
+# Cambiar el grupo con el que se comparte el archivo
+$ chgrp [grupo] archivo.txt
+
+```
+
+**Sólo el dueño puede cambiar el grupo de los archivos
+y sólo puede asignar un grupo al que pertenezca.**
+
+## ¡NO! ¡NO! ¡NO!
+
+![Permisos 777](https://img.devrant.io/devrant/rant/r_574536_X1cAX.jpg)
 
 ## Cifrado
 
 Más allá del alcance de este taller.
 
-# Integridad
+```
+# Para los intrépidos
+man gpg
+```
 
-## ¿La información que tengo es la misma que me enviaron?
+# Integridad \
+![](https://azurecomcdn.azureedge.net/cvt-82fa5a5b61233507a1f07292e1e92f1f94134e7850b2e6516294f02a7b6466a5/images/page/services/storage/data-integrity.png) \
+
+## ¿Por qué podría no estar bien mi información?
 
 - Errores en transmisión.
 - Usuario malicioso.
+- Ataque informático.
+- Virus.
+- ¿Guardar cambios?
+
+## Resúmen criptográfico (hash)
+
+- Cambia mucho si cambia la entrada de datos.
+
+```
+$ echo pato | md5sum
+b86f979c3e33ea6c2bc3fb8e423edd9f  -
+$ echo peto | md5sum
+9aacef02bf4e663962a3bff0bbf61f96  -
+```
+
+- Siempre muestra el mismo resultado ante la entrada de datos.
+
+```
+$ echo pato | md5sum
+b86f979c3e33ea6c2bc3fb8e423edd9f  -
+$ echo pato | md5sum
+b86f979c3e33ea6c2bc3fb8e423edd9f  -
+```
+
+## Resúmen criptográfico (hash)
+
+- No es falsificable.
+
+```
+$ md5sum data/seguridad.md
+7b34ad9b6b85fc7d89483f326d3a3ffd  data/seguridad.md
+```
+
+**NOTA**: ¡¡md5 [ya es falsificable](https://blog.avira.com/md5-the-broken-algorithm/)!!
+
+---
+
+![](/home/joshpar/shots/2017-06-15-002117.png)
 
 ---
 
