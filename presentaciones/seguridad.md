@@ -70,7 +70,10 @@ ssh-keygen \
 	-t rsa \
 	-b 4096 \
 	-C "`whoami`@`hostname`" \
-	-f ~/.ssh/"`whoami`@`hostname`"
+	-f ~/.ssh/inmegen
+
+# Copiar la clave al servidor
+ssh-copy-id -i ~/.ssh/inmegen.pub alumnoXX@192.168.105.221
 ```
 
 ## Configurar el cliente ssh
