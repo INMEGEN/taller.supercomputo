@@ -52,8 +52,8 @@ Una buena contraseña es:
 
 Se generan un par de llaves:
 
-![Clave pública](../imagenes/candado.png){width=5cm}
-![Clave privada](https://cdn3.iconfinder.com/data/icons/wpzoom-developer-icon-set/500/104-512.png){width=5cm}\
+![Clave pública](../imagenes/candado.png)
+![Clave privada](https://cdn3.iconfinder.com/data/icons/wpzoom-developer-icon-set/500/104-512.png)\
 ```
       Clave pública                    Clave privada
 ```
@@ -124,24 +124,21 @@ debería entrar sin pedir contraseña.
 ## Hay 3 permisos
 
 -----------------------------------------------------------------
-Permiso     Abreviatura   Valor  Utilidad
------------ ------------ ------- --------------------------------
- Lectura     r (read)       4    ¿Puedo ver los datos?
-
- Escritura   w (write)      2    ¿Puedo cambiar los datos?
-
- Ejecución   x (execute)    1    ¿Puedo usar este programa?
+Permiso    |Abreviatura | Valor |Utilidad
+-----------|------------|-------|--------------------------------
+ Lectura   | r (read)   |   4   |¿Puedo ver los datos?
+ Escritura | w (write)  |   2   |¿Puedo cambiar los datos?
+ Ejecución | x (execute)|   1   |¿Puedo usar este programa?
 -----------------------------------------------------------------
 : Permisos en unix
 
 ## Hay 3 contextos para los permisos
 
 ---------------------------------
- Usuario    Grupo      Otros
----------- ---------- -----------
-   rwx        rwx        rwx
-
-   421        421        421
+ Usuario  | Grupo    | Otros
+----------|----------|-----------
+   rwx    |   rwx    |   rwx
+   421    |   421    |   421
 ---------------------------------
 : Contextos para permisos en unix
 
@@ -167,13 +164,11 @@ grupo
 ## Ejemplo de permisos
 
 ----------------------------------------
-  Permisos    Usuario   Grupo     Otros
------------ ---------- --------- -------
- 123           --x       -w-       -wx
-
- 456           r--       r-x       rw-
-
- 755           rwx       r-x       r-x
+  Permisos |  Usuario | Grupo   | Otros
+-----------|----------|---------|-------
+ 123       |   --x    |  -w-    |  -wx
+ 456       |   r--    |  r-x    |  rw-
+ 755       |   rwx    |  r-x    |  r-x
 ----------------------------------------
 
 ## Cambiar permisos (`chmod`)
@@ -259,7 +254,7 @@ $ md5sum data/seguridad.md
 7b34ad9b6b85fc7d89483f326d3a3ffd  data/seguridad.md
 ```
 
-![¡md5 ya es falsificable!](../2017-06-15-002117.png){width=5cm}
+![md5 ya es falsificable](../2017-06-15-002117.png)
 
 <https://blog.avira.com/md5-the-broken-algorithm>
 
