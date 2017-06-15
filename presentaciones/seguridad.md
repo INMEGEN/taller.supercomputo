@@ -252,7 +252,7 @@ $ md5sum data/seguridad.md
 7b34ad9b6b85fc7d89483f326d3a3ffd  data/seguridad.md
 ```
 
-![md5 ya es falsificable](../2017-06-15-002117.png)
+![md5 ya es falsificable](../imagenes/2017-06-15-002117.png)
 
 <https://blog.avira.com/md5-the-broken-algorithm>
 
