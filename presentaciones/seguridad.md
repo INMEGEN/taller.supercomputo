@@ -2,19 +2,71 @@
 title: Supercómputo en INMEGEN
 subtitle: Seguridad de la información
 author: Joshua Haase
+lang: es-MX
 date: 2017-06-15
 ---
 
 ## Seguridad Informática
 
-~ Confiabilidad:
-     Sólo las personas correctas pueden acceder y modificar los datos.
+Confiabilidad
+: Sólo las personas correctas pueden acceder y modificar los datos.
 
-~ Confidencialidad:
-     Sólo las personas correctas ven los datos.
+Confidencialidad
+: Sólo las personas correctas pueden acceder a los datos.
 
-~ Integridad de datos:
-    Los datos que se muestran son los correctos.
+Integridad de datos
+: Los datos que se muestran son los correctos.
+
+# Confiabilidad
+
+## ¿Cómo sé que el usuario es la persona correcta?
+
+- Algo que sé (contraseñas).
+
+- Algo que tengo (llaves).
+
+- Algo que soy (huellas biométricas).
+
+## Contraseñas
+
+![Dos esquemas de contraseñas.](http://imgs.xkcd.com/comics/password_strength.png) \
+
+## Más acerca de contraseñas
+
+https://blog.hubspot.com/hs-fs/hubfs/password-stats-infographic.jpg?t=1497478617668&width=669&height=5027&name=password-stats-infographic.jpg
+
+## Uso de gestor de contraseñas
+
+# Llaves criptográficas (clave pública y privada)
+
+## Llaves criptográficas
+
+Se generan un par de llaves:
+
+![Clave pública](https://image.flaticon.com/icons/svg/1/1213.svg){width=5cm}
+[Clave privada](https://cdn3.iconfinder.com/data/icons/wpzoom-developer-icon-set/500/104-512.png){width=5cm}
+
+## Generar el par de llaves
+
+```
+# Generar el directorio para el par de llaves
+mkdir -p ~/.ssh
+
+# Sólo permitir acceso al usuario
+chmod 700 ~/.ssh
+
+# Generar el par de claves criptográficas
+ssh-keygen \
+	-t rsa \
+	-b 4096 \
+	-C "`whoami`@`hostname`" \
+	-f ~/.ssh/inmegen
+```
+
+## Generar el par de llaves (putty)
+
+https://www.howtoforge.com/ssh_key_based_logins_putty
+
 
 # Confidencialidad
 
@@ -58,7 +110,7 @@ Los archivos en UNIX tienen:
 - usuario ¿De quién son los archivos?
 - grupo ¿Quiénes más tienen acceso extra?
 
-##
+## Ejemplo de permisos
 
 ----------------------------------------
   Permisos    Usuario   Grupo     Otros
@@ -74,48 +126,6 @@ Los archivos en UNIX tienen:
 
 
 
-# Contraseñas
-
-## Contraseñas
-
-![](http://imgs.xkcd.com/comics/password_strength.png)
-
-## Contraseñas
-
-
-https://blog.hubspot.com/hs-fs/hubfs/password-stats-infographic.jpg?t=1497478617668&width=669&height=5027&name=password-stats-infographic.jpg
-
-## Uso de gestor de contraseñas
-
-# Llaves criptográficas (clave pública y privada)
-
-## Llaves criptográficas
-
-Se generan un par de llaves:
-
-![Clave pública](https://image.flaticon.com/icons/svg/1/1213.svg){width=5cm}
-![Clave privada](https://cdn3.iconfinder.com/data/icons/wpzoom-developer-icon-set/500/104-512.png){width=5cm}
-
-## Generar el par de llaves
-
-```
-# Generar el directorio para el par de llaves
-mkdir -p ~/.ssh
-
-# Sólo permitir acceso al usuario
-chmod 700 ~/.ssh
-
-# Generar el par de claves criptográficas
-ssh-keygen \
-	-t rsa \
-	-b 4096 \
-	-C "`whoami`@`hostname`" \
-	-f ~/.ssh/inmegen
-```
-
-## Generar el par de llaves (putty)
-
-https://www.howtoforge.com/ssh_key_based_logins_putty
 
 # Confiabilidad
 
@@ -123,5 +133,3 @@ https://www.howtoforge.com/ssh_key_based_logins_putty
 
 - Errores en transmisión.
 - Usuario malicioso.
-
-
