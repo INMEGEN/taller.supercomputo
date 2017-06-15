@@ -42,7 +42,7 @@ Una buena contraseña es:
 
 ## Uso de gestor de contraseñas
 
-![](http://keepass.info/screenshots/keepass_2x/main_big.png)
+![Un gestor de contraseñas.](http://keepass.info/screenshots/keepass_2x/main_big.png)
 
 <http://keepass.info>
 
@@ -52,7 +52,7 @@ Una buena contraseña es:
 
 Se generan un par de llaves:
 
-![Clave pública](/home/joshpar/src/github.com/INMEGEN/taller.supercomputo/imagenes/candado.png){width=5cm}
+![Clave pública](../imagenes/candado.png){width=5cm}
 ![Clave privada](https://cdn3.iconfinder.com/data/icons/wpzoom-developer-icon-set/500/104-512.png){width=5cm}\
 ```
       Clave pública                    Clave privada
@@ -111,9 +111,13 @@ https://www.howtoforge.com/ssh_key_based_logins_putty
 
 ## ¿Funcionó el uso de claves?
 
+Si la configuración quedó bien:
+
 ```
 ssh castillo
 ```
+
+debería entrar sin pedir contraseña.
 
 # Confidencialidad
 
@@ -255,7 +259,7 @@ $ md5sum data/seguridad.md
 7b34ad9b6b85fc7d89483f326d3a3ffd  data/seguridad.md
 ```
 
-![¡md5 ya es falsificable!](/home/joshpar/shots/2017-06-15-002117.png){width=5cm}
+![¡md5 ya es falsificable!](../2017-06-15-002117.png){width=5cm}
 
 <https://blog.avira.com/md5-the-broken-algorithm>
 
