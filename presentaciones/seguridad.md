@@ -52,11 +52,9 @@ Una buena contraseña es:
 
 Se generan un par de llaves:
 
-![Clave pública](../imagenes/candado.png)
-![Clave privada](https://cdn3.iconfinder.com/data/icons/wpzoom-developer-icon-set/500/104-512.png)\
-```
-      Clave pública                    Clave privada
-```
+![Clave pública.](../imagenes/candado.png)
+
+![Clave privada.](https://cdn3.iconfinder.com/data/icons/wpzoom-developer-icon-set/500/104-512.png)
 
 ## Generar el par de llaves
 
