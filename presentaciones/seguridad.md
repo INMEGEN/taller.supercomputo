@@ -216,8 +216,7 @@ Más allá del alcance de este taller.
 man gpg
 ```
 
-# Integridad \
-![](https://azurecomcdn.azureedge.net/cvt-82fa5a5b61233507a1f07292e1e92f1f94134e7850b2e6516294f02a7b6466a5/images/page/services/storage/data-integrity.png) \
+# Integridad ![](https://azurecomcdn.azureedge.net/cvt-82fa5a5b61233507a1f07292e1e92f1f94134e7850b2e6516294f02a7b6466a5/images/page/services/storage/data-integrity.png)
 
 ## ¿Por qué podría no estar bien mi información?
 
@@ -256,12 +255,20 @@ $ md5sum data/seguridad.md
 7b34ad9b6b85fc7d89483f326d3a3ffd  data/seguridad.md
 ```
 
-**NOTA**: ¡¡md5 [ya es falsificable](https://blog.avira.com/md5-the-broken-algorithm/)!!
+![¡md5 ya es falsificable!](/home/joshpar/shots/2017-06-15-002117.png){width=5cm}
 
----
+<https://blog.avira.com/md5-the-broken-algorithm>
 
-![](/home/joshpar/shots/2017-06-15-002117.png)
+## Revisar integridad de datos
 
----
+Desde el lugar original de los datos:
 
-https://blog.hubspot.com/hs-fs/hubfs/password-stats-infographic.jpg?t=1497478617668&width=669&height=5027&name=password-stats-infographic.jpg
+```
+find datos/ | xargs sha256sum > datos.sha256
+```
+
+Desde el la copia de los datos:
+
+```
+sha256sum -c datos.sha256
+```
