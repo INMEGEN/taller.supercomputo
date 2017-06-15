@@ -79,7 +79,7 @@ ssh-copy-id -i ~/.ssh/inmegen.pub alumnoXX@192.168.105.221
 ## Configurar el cliente ssh
 
 ```
-gedit ~/.ssh/config
+nano ~/.ssh/config
 ```
 
 ```
@@ -94,16 +94,11 @@ Host *
 
     # Mostrar un identificador del servidor
     VisualHostKey   yes
-```
-
-## Configurar el cliente ssh
-
-```
 
 # Usar la clave pública de inmegen dentro del INMEGEN
 Host    *.inmegen.gob.mx
-    UserName	[usuario]
-    IdentityFile    ~/.ssh/[usuario]@inmegen
+    UserName	alumnoXX
+    IdentityFile    ~/.ssh/inmegen
 ```
 
 ## Generar el par de llaves (putty)
