@@ -1,7 +1,7 @@
 # mk
 
 
-[*Mk*](https://swtch.com/plan9port/man/man1/mk.html) es una herramienta general y eficiente para describir y mantener dependencias entre archvos y programas. Mk es compatible y al estilo de la herramienta de UNIX *make*. Las ventajas más importantes de mk sobre make es que ejecuta recetas en paralelo, usando metareglas de emparejado de patrones más que reglas de transformación de sufijos, y de resolucion de dependencias por cierre transitivo de todas las reglas. Mk corre donde sea de 2 a 30 veces más rápido de make.
+[*Mk*](https://swtch.com/plan9port/man/man1/mk.html) es una herramienta general y eficiente para describir y mantener dependencias entre archivos y programas. Mk es compatible y hecha al estilo de la herramienta de UNIX *make*. Las ventajas más importantes de mk sobre make es que ejecuta recetas en paralelo, usando metareglas de emparejado de patrones más que reglas de transformación de sufijos, y de resolucion de dependencias por cierre transitivo de todas las reglas.
 
 ### Receta básica
 
@@ -9,9 +9,9 @@ Dado que mk está basado en make y make es un programa para instalar programas, 
 
 <img src="../imagenes/mk1.png" height = "150">
 
-Las flechas significan "depende de". Por tanto **porg** dende de si **a.o** y **b.o** se modifcian y si **a.o** y **b.o** cambian entonces **prog** debe ser hecho de nuevo. Igualmente, **a.o** depende de **a.c** y **b.o** depende de **b.c** y de **prog.h**.
+Las flechas significan "depende de". Por tanto **porg** dende de si **a.o** y **b.o** se modifcian y, si **a.o** y **b.o** cambian, entonces **prog** debe ser hecho de nuevo. Igualmente, **a.o** depende de **a.c** y **b.o** depende de **b.c** y de **prog.h**.
 
-La descripción en texto de de como se hace **prog** se escribe en el *mkfile* y se vería así:
+La descripción en texto de como se hace **prog** se escribe en el *mkfile* y se vería así:
 
 <img src="../imagenes/mk2.png" height = "130">
 
@@ -31,7 +31,7 @@ Si cambiamos un archivo fuente, *mk* solo reconstruirá aquellos archivos que no
 
 <img src="../imagenes/mk6.png" height = "160">
 
-Esto es, **b.o** estaba desactualizado con respecto a **prog.h**. Después de que **b.o** fue re hecho, se encontró que **prog** estaba desactualizado con respecto a **b.o** y fue re hecho. Los números son las fechas de modificación de los archivos: los valores no son tan importantes como la diferencia entre ellos. Una fechas de modificación de cero indica un archivo que no existe.
+Esto es, **b.o** estaba desactualizado con respecto a **prog.h**. Después de que **b.o** fue re hecho, se encontró que **prog** estaba desactualizado con respecto a **b.o** y fue re hecho. Los números son las fechas de modificación de los archivos: los valores no son tan importantes como la diferencia entre ellos. Una fecha de modificación de cero indica un archivo que no existe.
 
 ### Variables
 
@@ -39,7 +39,7 @@ Supongamos ahora que necesitamos añadir una opción en todos los pasos, por eje
 
 <img src="../imagenes/mk7.png" height = "140">
 
-Una mejor solución es unas una *variable*. En *mk* una variable tiene una forma muy similar a una variable de shell. Un nombre conveneinte (mnemotécnico) sería **CFLAGS**. El nuevo mkfile se vería así:
+Una mejor solución es unas una *variable*. En *mk* una variable tiene una forma muy similar a una variable de shell. Un nombre conveniente (mnemotécnico) sería **CFLAGS**. El nuevo mkfile se vería así:
 
 <img src="../imagenes/mk8.png" height = "150">
 
@@ -82,6 +82,7 @@ Hacemos una liga simbólica de nuestros datos a la carpeta del mk
 ```
 $ ls -lah /castle/alumno70/data.alignment/
 $ ln -s /castle/alumno70/data.alignment data
+$ ls -lah data
 ```
 
 ¿Cómo alinearíamos una muestra?
@@ -174,4 +175,14 @@ Y repetimos los pases mágicos
 
 ```
 $ mk
+```
+
+Nota que los nuevos resultados, como son archivos con nombres distintos, fueron añadidos a la carpeta de resultados. No fue sustituida. Se puede renombrar la carpeta de resultados para que *mk* haga una nueva carpeta de resultados.
+
+
+Salir de byobu y de nuestra sesión
+
+```
+$ exit
+$ exit
 ```
