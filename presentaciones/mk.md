@@ -91,8 +91,8 @@ $ ls -lah data
 $ bwa mem \
 	-t 2 \
 	/reference/ftp.broadinstitute.org/bundle/hg38/Homo_sapiens_assembly38.fasta \
-	/data/MT1_L001_R1.fastq.gz \
-	/data/MT1_L001_R2.fastq.gz \
+	data/MT1_L001_R1.fastq.gz \
+	data/MT1_L001_R2.fastq.gz \
 	> MT1.sam 	
 ```
 
