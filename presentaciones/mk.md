@@ -92,7 +92,7 @@ $ bwa mem \
 	-t 2 \
 	/reference/ftp.broadinstitute.org/bundle/hg38/Homo_sapiens_assembly38.fasta \
 	/data/MT1_L001_R1.fastq.gz \
-	/data/MT1_L001_R1.fastq.gz \
+	/data/MT1_L001_R2.fastq.gz \
 	> MT1.sam 	
 ```
 
@@ -125,8 +125,8 @@ De esta forma si queremos hacer el sam de la primera secuencia tenemos que hacer
 $ mk results/bwa_align/MT1.sam
 ```
 
-Pero queremos que nos los haga todos a la vez. ¿se acuerdan que *mk* hace la primera orden de la lista de tareas? 
-Vamos a generar una tarea virtual con todas las acciones que queremos. Para esto hay que generar los los nombres de todos los targets de nuestro mk.
+Pero queremos que nos los haga todos a la vez. ¿Se acuerdan que *mk* hace la primera orden de la lista de tareas? 
+Vamos a generar una tarea virtual con todas las acciones que queremos y ponerla al principio. Para esto hay que generar los nombres de todos los targets de nuestro *mk*.
 
 ```
 $ find -L data/ -name '*.fastq.gz' \
@@ -141,10 +141,9 @@ Y nuestra receta sería
 NPROC=1 # This program uses threads, so we use only one process
 THREADS=2
 REFERENCE=/reference/ftp.broadinstitute.org/bundle/hg38/Homo_sapiens_assembly38.fasta
-
 BWA_ALIGN_TARGETS=`{ find -L data/ -name '*.fastq.gz' \
-| sed -r -e 's#data/#results/bwa_align/#g' -e 's#_L001_R[12]\.fastq\.gz#.sam#g' \
-| sort -u }
+		| sed -r -e 's#data/#results/bwa_align/#g' -e 's#_L001_R[12]\.fastq\.gz#.sam#g' \
+		| sort -u }
 
 bwa_align:V:	$BWA_ALIGN_TARGETS
 
@@ -177,10 +176,10 @@ Y repetimos los pases mágicos
 $ mk
 ```
 
-Nota que los nuevos resultados, como son archivos con nombres distintos, fueron añadidos a la carpeta de resultados. No fue sustituida. Se puede renombrar la carpeta de resultados para que *mk* haga una nueva carpeta de resultados.
+Notemos que los nuevos resultados, como son archivos con nombres distintos, fueron añadidos a la carpeta de resultados, no fue sustituida. Se puede renombrar la carpeta de resultados para que *mk* haga una nueva carpeta con los nuevos resultados.
 
 
-Salir de byobu y de nuestra sesión
+Salir de byobu y de nuestra sesión:
 
 ```
 $ exit
