@@ -1,7 +1,7 @@
 # mk
 
 
-[*Mk*](https://swtch.com/plan9port/man/man1/mk.html) es una herramienta general y eficiente para describir y mantener dependencias entre archivos y programas. Mk es compatible y hecha al estilo de la herramienta de UNIX *make*. Las ventajas más importantes de mk sobre make es que ejecuta recetas en paralelo, usando metareglas de emparejado de patrones más que reglas de transformación de sufijos, y de resolucion de dependencias por cierre transitivo de todas las reglas.
+[*Mk*](https://swtch.com/plan9port/man/man1/mk.html) es una herramienta general y eficiente para describir y mantener dependencias entre archivos y programas. Mk es compatible y hecha al estilo de la herramienta de UNIX *make*. Las ventajas más importantes de mk sobre make es que ejecuta recetas en paralelo, usando metareglas de emparejado de patrones más que reglas de transformación de sufijos, y de resolución de dependencias por cierre transitivo de todas las reglas.
 
 ### Receta básica
 
@@ -47,13 +47,13 @@ Ahora, si quieremos añadir más opciones a todos los pasos (digamos añadir la 
 
 <img src="../imagenes/mk9.png" height = "25"> 
 
-y recompilar todos los objetos de nuevo. La forma facil de hacer esto es con **mk -a** lo que quiere decir "has todo de nuevo sin importar la fecha de modificación".
+y recompilar todos los objetos de nuevo. La forma fácil de hacer esto es con **mk -a** lo que quiere decir "has todo de nuevo sin importar la fecha de modificación".
 
-Algunas variables ya están incluidas por *mk* para ser usadas en las fórmulas. Dos muy comunes son **prereq** y **target** cuyo valor siempre será todos los prerequicitos de la regla y el objetivo de la mismo respectivamente. Podemos entonces reescribir la primera reglas así:
+Algunas variables ya están incluidas por *mk* para ser usadas en las fórmulas. Dos muy comunes son **prereq** y **target** cuyo valor siempre será todos los prerequisitos de la regla y el objetivo de la mismo respectivamente. Podemos entonces reescribir la primera reglas así:
 
 <img src="../imagenes/mk10.png" height = "60"> 
 
-Así se puede garantizar que los prerequicitos de cada regla son los mismos. Ahora es facil incorporar un nuevo requicito , por ejemplo **c.o** añadiendo el nuevo nombre una sola vez.
+Así se puede garantizar que los prerequisitos de cada regla son los mismos. Ahora es fácil incorporar un nuevo requisito , por ejemplo **c.o** añadiendo el nuevo nombre una sola vez.
 
 <img src="../imagenes/mk11.png" height = "200">
 
@@ -96,7 +96,7 @@ $ bwa mem \
 	> MT1.sam 	
 ```
 
-Nuestra recera sería:
+Nuestra receta sería:
 
 ```
 NPROC=1 # This program uses threads, so we use only one process
@@ -112,7 +112,7 @@ results/bwa_align/%.sam:	data/%_L001_R1.fastq.gz data/%_L001_R2.fastq.gz
 		> $target
 ```
 
-entonce hay que copiar esta receta en un archivo llamado *mkfile*
+entonces hay que copiar esta receta en un archivo llamado *mkfile*
 
 ```
 $ nano mkfile
@@ -183,7 +183,7 @@ Ahora para correr todos los alineamientos de la carpeta solo tenemos que tipear
 $ mk
 ```
 
-Ahora queremos hacer nuestra mágia con nuevos datos. Para eso solo tenemos que rehacer nuestra liga simbólica a la carpeta con datos nuevos
+Ahora queremos hacer nuestra magia con nuevos datos. Para eso solo tenemos que rehacer nuestra liga simbólica a la carpeta con datos nuevos
 
 ```
 $ rm data
@@ -200,9 +200,59 @@ $ mk
 Notemos que los nuevos resultados, como son archivos con nombres distintos, fueron añadidos a la carpeta de resultados, no fue sustituida. Se puede renombrar la carpeta de resultados para que *mk* haga una nueva carpeta con los nuevos resultados.
 
 
-Salir de byobu y de nuestra sesión:
+Salir de byobu y de nuestra sesión en castillo:
 
 ```
 $ exit
 $ exit
 ```
+
+
+## Como instalar mk en nuestra máquina personal
+
+#### En GNU/Linux (debianoso)
+
+Instalamos usando:
+
+```
+$ apt install 9base
+```
+
+Añadir la linea:
+
+`
+export PATH=$PATH:/usr/lib/plan9/bin
+`
+
+ al final de nuestro archivo de configuración ".bashrc" usando:
+ 
+```
+$ nano ~/.bashrc
+``` 
+
+#### En Mac
+
+Instalamos usando [Homebrew](https://brew.sh/):
+
+```
+$ brew install plan9port
+```
+
+Añadir la linea:
+
+`
+export PATH=$PATH:/usr/local/Cellar/plan9port/20140306/libexec/bin/
+`
+
+ al final de nuestro archivo de configuración ".bash_profile" usando:
+ 
+```
+$ open -a TextEdit ~/.bash_profile
+``` 
+
+En Windows no conocemos opciones de instalación de plan9. 
+
+Fuentes:
+
+[Manual de mk](https://swtch.com/plan9port/man/man1/mk.html)
+[Artículo de mk](http://doc.cat-v.org/bell_labs/mk/mk.pdf)
