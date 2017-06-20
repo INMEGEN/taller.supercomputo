@@ -33,6 +33,12 @@ o, lo que es lo mismo, a esta IP:
 	```
 	$ ssh <usuario>@castillo.cluster.inmegen.gob.mx
 	```
+o
+
+	```
+	$ ssh <usuario>@192.168.105.221
+	```
+
 
 3. Teclea tu contraseña (parecerá que no se está escribiendo nada) y da enter de nuevo
 
@@ -43,6 +49,12 @@ o, lo que es lo mismo, a esta IP:
 	```
 	castillo.cluster.inmegen.gob.mx
 	```
+o
+
+	```
+	192.168.105.221
+	```
+
 	
 	![PuTTY](../imagenes/putty.jpg)
 
@@ -62,7 +74,7 @@ o, lo que es lo mismo, a esta IP:
 
 ## Byobu
 
-[Byobu](http://byobu.co/) es un multiplexador de terminal. Sirve, entre otras cosas, para proteger el trabajo que hacemos en el cluster de posibles desconecciones inesperadas desde nuestra terminal. 
+[Byobu](http://byobu.co/) es un multiplexador de terminal. Sirve, entre otras cosas, para proteger el trabajo que hacemos en el cluster de posibles desconexiones inesperadas desde nuestra terminal. 
  
 
 ```
@@ -98,7 +110,7 @@ Salimos de Byobu.
 $ exit
 ```
 
-Cerramos la coneción SSH
+Cerramos la conexión SSH
 
 ```
 $ exit
