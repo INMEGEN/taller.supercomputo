@@ -137,7 +137,8 @@ $ find -L data/ -name '*.fastq.gz' \
 Esto lo ponemos en un script. Usamos nano para generarlo
 
 ```
-$ nano targets
+$ mkdir bin
+$ nano bin/targets
 ```
 
 Y luego pegamos:
