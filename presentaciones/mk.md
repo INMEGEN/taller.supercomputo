@@ -153,7 +153,7 @@ find -L data/ -name '*.fastq.gz' \
 Guardamos y hacemos ejecutable:
 
 ```
-$ chmod +x targets
+$ chmod +x bin/targets
 ```
 
 
@@ -164,7 +164,7 @@ Modificamos nuestra receta así
 NPROC=1 # This program uses threads, so we use only one process
 THREADS=2
 REFERENCE=/reference/ftp.broadinstitute.org/bundle/hg38/Homo_sapiens_assembly38.fasta
-BWA_ALIGN_TARGETS=`{ ./targets }
+BWA_ALIGN_TARGETS=`{ ./bin/targets }
 
 bwa_align:V:	$BWA_ALIGN_TARGETS
 
