@@ -7,7 +7,7 @@
 
 Dado que mk está basado en make y make es un programa para instalar programas, vamos a ejemplificar mk con la instalación de un programa que, en este caso se llamará **prog**. Digamos que **prog** se hace a partir de **a.o** y **b.o**, los cuales a su vez se hacen al compilar **a.c** y **b.c** respectivamente. Además **b.c** incluye un archivo de cabecera **prog.h**. Representamos estas relaciones esquemáticamente como sigue: 
 
-<img src="../imagenes/mk1.png" height = "150">
+<img src="../imagenes/mk1.png" height = "140">
 
 Las flechas significan "depende de". Por tanto **porg** dende de si **a.o** y **b.o** se modifcian y, si **a.o** y **b.o** cambian, entonces **prog** debe ser hecho de nuevo. Igualmente, **a.o** depende de **a.c** y **b.o** depende de **b.c** y de **prog.h**.
 
@@ -82,7 +82,7 @@ Hacemos una liga simbólica de nuestros datos a la carpeta del mk
 ```
 $ ls -lah /castle/alumno70/data.alignment/
 $ ln -s /castle/alumno70/data.alignment data
-$ ls -lah data
+$ ls -lah data/
 ```
 
 ¿Cómo alinearíamos una muestra?
@@ -134,16 +134,36 @@ $ find -L data/ -name '*.fastq.gz' \
 | sort -u
 ```
 
-Y nuestra receta sería
+Esto lo ponemos en un script. Usamos nano para generarlo
+
+```
+$ nano targets
+```
+
+Y luego pegamos:
+
+```
+#!/bin/sh
+find -L data/ -name '*.fastq.gz' \
+| sed -r -e 's#data/#results/bwa_align/#g' -e 's#_L001_R[12]\.fastq\.gz#.sam#g' \
+| sort -u
+```
+
+Guardamos y hacemos ejecutable:
+
+```
+$ chmod +x targets
+```
+
+
+Modificamos nuestra receta así
 
 
 ```
 NPROC=1 # This program uses threads, so we use only one process
 THREADS=2
 REFERENCE=/reference/ftp.broadinstitute.org/bundle/hg38/Homo_sapiens_assembly38.fasta
-BWA_ALIGN_TARGETS=`{ find -L data/ -name '*.fastq.gz' \
-		| sed -r -e 's#data/#results/bwa_align/#g' -e 's#_L001_R[12]\.fastq\.gz#.sam#g' \
-		| sort -u }
+BWA_ALIGN_TARGETS=`{ ./targets }
 
 bwa_align:V:	$BWA_ALIGN_TARGETS
 
