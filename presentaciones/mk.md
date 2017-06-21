@@ -250,9 +250,10 @@ export PATH=$PATH:/usr/local/Cellar/plan9port/20140306/libexec/bin/
 $ open -a TextEdit ~/.bash_profile
 ``` 
 
-En Windows no conocemos opciones de instalación de plan9. 
+***En Windows no conocemos opciones de instalación de plan9.***
 
-## Fuentes
+## Recursos
 
 [Manual de mk](https://swtch.com/plan9port/man/man1/mk.html)
+
 [Artículo de mk](http://doc.cat-v.org/bell_labs/mk/mk.pdf)
