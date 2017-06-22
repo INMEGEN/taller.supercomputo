@@ -29,7 +29,7 @@ Por defecto `mk` hace \alert{el primer objetivo}.
 
 ## mk
 
-![`mk` genera un árbol de dependencias.](data/imagenes/mk-tree.png)
+![`mk` genera un árbol de dependencias.](../imagenes/imagenes/mk-tree.png)
 
 ## Estructura de directorios
 
@@ -40,7 +40,7 @@ $ tree
 ├── bin/
 │   ├── targets
 │   └── otros-scripts...
-├── data/
+├── ../imagenes/
 │   └── pato
 └── results/
     └── pato-a-la-naranja
@@ -50,9 +50,9 @@ $ tree
 
 ## Expresiones regulares
 
-![](data/imagenes/regexp_1.png ){align="center" width="60%"}
-![](data/imagenes/regexp_2.png ){align="center" width="59%"}
-![](data/imagenes/regexp_3.png ){align="center" width="20%"}
+![](../imagenes/imagenes/regexp_1.png ){align="center" width="60%"}
+![](../imagenes/imagenes/regexp_2.png ){align="center" width="59%"}
+![](../imagenes/imagenes/regexp_3.png ){align="center" width="20%"}
 
 # Algoritmo para hacer mk
 
@@ -71,7 +71,7 @@ $ tree
 
 ```
 $ cat mkfile
-results/%.asado:	data/%
+results/%.asado:	../imagenes/%
 ```
 
 ## Hacer la receta (comando).
@@ -82,7 +82,7 @@ $ asar --con-pimienta pato > pato.asado
 # se vuelve:
 #
 $ cat mkfile
-results/%.asado:	data/%
+results/%.asado:	../imagenes/%
 	mkdir -p `dirname $target`
 	asar --con-pimiemta $prereq > $target'.build' \
 	&& mv $target'.build' $target
@@ -104,7 +104,7 @@ mk -dep results/pato.asado | less
 
 ```
 $ cat mkfile
-results/%.asado:	data/%
+results/%.asado:	../imagenes/%
 	mkdir -p `dirname $target`
 	asar --con-pimienta $prereq > $target'.build' \
 	&& mv $target'.build' $target
@@ -119,7 +119,7 @@ $ cat bin/targets
 find -L data \
 	-type f \
 | sed -r \
-	-e 's#^data/#results/#' \
+	-e 's#^../imagenes/#results/#' \
 	-e 's#$#.asado#'
 ```
 
@@ -155,7 +155,7 @@ find -L data \
 	-type f \
 	'!' -empty \
 | sed -r \
-	-e 's#^data/#results/#' \
+	-e 's#^../imagenes/#results/#' \
 	-e 's#$#.asado#'
 ```
 
@@ -172,7 +172,7 @@ $ cat bin/targets
 find -L data \
 	-type f \
 | sed -r \
-	-e 's#^data/#results/#' \
+	-e 's#^../imagenes/#results/#' \
 	-e 's#$#.asado#'
 ```
 
