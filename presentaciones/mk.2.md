@@ -1,26 +1,31 @@
 ---
-date: "2017-06-22"
+date: "INMEGEN - 2017-06-22"
 title: "Supercómputo en INMEGEN"
-subtitle: ""
+subtitle: "Taller mk"
 author: "Joshua Haase"
 ---
 
 # Recapitulando (mk, regexp)
 
-## mkfile
-
-`objetivo($target):ATTRIBUTOS:	ingredientes($prereq)`
-\alert{$\langle tab \rangle$}`	receta(instrucciones)`
-
-$\,$\
-$\,$\
-$\,$\
+## mk
 
 `mk` es como un chef.
 
 `mkfile` es el recetario.
 
 `bin/targets` son las órdenes de los clientes.
+
+
+## mkfile 
+
+Un `mkfile` tiene la forma:
+
+`objetivo($target):ATTRIBUTOS:	ingredientes($prereq)` \
+\alert{<tab>}`	receta(instrucciones)`
+
+Se usa \alert{<tab>} para indicar los comandos de una *receta*.
+
+Por defecto `mk` hace \alert{el primer objetivo}.
 
 ## mk
 
@@ -61,6 +66,8 @@ $ tree
 - Poner a trabajar al chef (comando final).
 
 ## Nombrar el platillo (nombres de archivo).
+
+\<algo\> asado:
 
 ```
 $ cat mkfile
@@ -128,6 +135,8 @@ Sin embargo debe funcionar para ejecutarse correctamente.
 # Problemas comunes
 
 ## Permisos
+
+Si la compu dice `Permission denied`:
 
 ```
 chmod +x [archivos]
