@@ -7,19 +7,19 @@ author: "Cristóbal Fresno"
 
 # Historia
 
-El **clúster** se llama `ROGUE1` es un esfuerzo conjunto de la comunidad de INMEGEN en la cual han participado diferentes miembros de *Genómica Computacional*, *Unidad de Servicios Bioinformáticos*, *Unidad de Supercómputo*, *Departamento de Soporte Tecnológico* *Estudiantes* y diferentes grupos de investigación, para unificar la capacidad de cómputo instalada.
+El **Clúster** del INMEGEN se llama `ROGUE1` y es un esfuerzo conjunto de la comunidad de INMEGEN en la cual han participado diferentes miembros de *Genómica Computacional*, *Unidad de Servicios Bioinformáticos*, *Unidad de Supercómputo*, *Departamento de Soporte Tecnológico* *Estudiantes* y diferentes grupos de investigación. Tiene como principal idea unificar la capacidad de cómputo instalada.
 
 ![](../imagenes/AntesHoy.png )
 
 ## Misión
 
-Brindar el servicio de cómputo de alto rendimiento para abordar problemas de análisis de grandes volúmenes de datos de forma integrada, multidisciplinaria y novedosa, con la finalidad de satisfacer las necesidades bioinformáticas de los proyectos de investigación del *Instituto Nacional de Medicina Genómica*.
+La misión del Clúster es brindar el servicio de cómputo de alto rendimiento para abordar problemas de análisis de grandes volúmenes de datos de forma integrada, multidisciplinaria y novedosa, con la finalidad de satisfacer las necesidades bioinformáticas de los proyectos de investigación del *Instituto Nacional de Medicina Genómica*.
 
 ## Visión
 
-Consolidar la infraestructura para generar un equipo de bioinformáticos capaz de generar y aplicar herramientas analíticas centradas en la medicina genómica; convirtiéndonos en un referente en la investigación científica a nivel nacional e internacional.
+Queremos consolidar la infraestructura para generar un equipo de bioinformáticos capaz de generar y aplicar herramientas analíticas centradas en la medicina genómica; convirtiéndonos en un referente en la investigación científica a nivel nacional e internacional.
 
-# Qué ofrece el clúster de INMEGEN
+# Qué ofrece el Clúster de INMEGEN
 
 ## Datos
 
@@ -34,7 +34,7 @@ Consolidar la infraestructura para generar un equipo de bioinformáticos capaz d
 
 ## Colas de trabajo
 
-- Maximizar los recursos disponibles del clúster.
+- Maximizar los recursos disponibles del Clúster.
 - Esquema de prioridades conforme las necesidades del proyecto y la contribución.
 
 ## Soporte
@@ -44,7 +44,7 @@ Consolidar la infraestructura para generar un equipo de bioinformáticos capaz d
 
 # Infraestructura 
 
-Actualmente `ROGUE1` se encuentra instalado en el **site** de INMEGEN en sótano 1 y se encuentra a cargo de la *Unidad de Supercómputo* que dirige el *Ing. Joshua Ismael Haase Hernández*. Básicamente ROGUE1 se encuentra compuesto por:
+Actualmente `ROGUE1` se encuentra instalado en el *site* de INMEGEN, en sótano 1 y se encuentra a cargo de la *Unidad de Supercómputo* que dirige el *Ing. Joshua Ismael Haase Hernández*. Básicamente ROGUE1 se encuentra compuesto por:
 
 ![](../imagenes/Infraestructura.png)
 
@@ -56,31 +56,31 @@ Actualmente `ROGUE1` se encuentra basado en una arquitectura `heterogénea` de s
 
 ![](../imagenes/htcondor.png)
 
-El gestor de colas de trabajo actualmente implementado es [HTCondor](https://research.cs.wisc.edu/htcondor/). Para su correcta utilización es necesario conocer cómo se disponen los diferentes módulos de condor en el clúster:
+El gestor de colas de trabajo actualmente implementado es [HTCondor](https://research.cs.wisc.edu/htcondor/) (conocido simplemente como *condor*). Para su correcta utilización es necesario conocer cómo se disponen los diferentes módulos de condor en el clúster:
 
 - `Nodo cómputo`: Es aquel que realiza tareas de *procesamiento*.
 - `Nodo cola`: Es la cola de trabajo propiamente dicha y se pueden enviar/eliminar trabajos de ella.
 - `Nodo maestro`: Es aquel que *coordina/controla* las tareas entre la cola de trabajo y los nodos de cómputo 
 
-En `ROGUE1` la infraestructura se encuentra dispuesta de la siguente manera:
+En `ROGUE1` la infraestructura se encuentra dispuesta de la siguiente manera:
 
 ![](../imagenes/htcondor_rogue1.png)
 
 ## Filosofía
 
-Este gestor de colas trabaja bajo el paradirma de **anuncios de clasificados de periódico**. Así cada nodo de cómputo sabe que recursos computacionales posee y lee el periódico en busca de potenciales trabajos. Así, los trabajos que se envien a la cola deben tener una estructura que solicite los recursos computacionales adecuados y el primer nodo disponible tomará el trabajo. 
+Este gestor de colas trabaja bajo el paradigma de **anuncios de clasificados de periódico**. Así cada nodo de cómputo sabe que recursos computacionales posee y lee el periódico en busca de potenciales trabajos. Así, los trabajos que se envíen a la cola deben tener una estructura que solicite los recursos computacionales adecuados y el primer nodo disponible tomará el trabajo. 
 
 Los **anuncios** básicamente cuentan con un *encabezado* en el cual se definen recursos computacionales y un *cuerpo* donde se define el/los trabajo/s propiamente dichos. Más adelante volveremos sobre este tema en detalle.
 
-Por último, HTCondor no es una simple cola de trabajo sino que gestiona los recursos disponibles basado en un esquema de `prioridades`. Así, la prioridad por defecto se calcula con una ventana de tiempo de un (1) día, y se pondera inversamente a la carga de trabajo enviada, es decir, cuanto más trabajos se envien menor es la prioridad frente a un usuario que no envia trabajos. Claro está que también pueden existir cuotas por grupo de investigación, prioritarias sobre los equipos aportadas, etc. 
+Por último, HTCondor no es una simple cola de trabajo sino que gestiona los recursos disponibles basado en un esquema de `prioridades`. Así, la prioridad por defecto se calcula con una ventana de tiempo de un (1) día, y se pondera inversamente a la carga de trabajo enviada, es decir, cuanto más trabajos se envíen menor es la prioridad frente a un usuario que no enviá trabajos. Claro está que también pueden existir cuotas por grupo de investigación, prioritarias sobre los equipos aportadas, etc. 
 
-# HTCondor-mk 
+# Condor-mk 
 
 No es una tarea fácil generar los archivos necesarios que requiere condor. No obstante, podemos utilizar lo que ya sabemos de `mk` para hacernos el día a día más fácil. Para ello, ya se cuenta con un paquete que realiza condor basado en mk (`condor-mk`).
 
-## Estructura de archivos de HTCondor 
+## Estructura de archivos de Condor-Mk 
 
-`condor-mk` requiere de la siguiente estructura de proyecto para poder funcionar de forma correcta:
+`Condor-mk` requiere de la siguiente estructura de proyecto para poder funcionar de forma correcta:
  
 ```
 ./
@@ -106,7 +106,7 @@ No es una tarea fácil generar los archivos necesarios que requiere condor. No o
 
 donde tendremos nuestro propio `mkfile` tal como lo veníamos haciendo, un directorio `bin` donde se encuentren nuestros scripts y en especial `bin/targets` que pedirá todas las ordenes al chef (`mk`), un directorio `data` con los archivos de entrada (si existieran) y una carpeta `results` con los archivos de salida que generará nuestro mkfile.
 
-Ahora que tenemos todo preparado podemos inspeccionar como son los objetvos de `condor-mk` para ver que realiza cada uno de ellos:
+Ahora que tenemos todo preparado podemos inspeccionar cómo son los objetos de `condor-mk` para ver que realiza cada uno de ellos:
 
 ```
 cat /usr/lib/condor-mk/condor.mk | grep ":"
@@ -114,8 +114,8 @@ cat /usr/lib/condor-mk/condor.mk | grep ":"
 
 donde encontramos:
 
-- `condor.header`: Genera el encabezado que utilizará condor para publicar en el anuncio los recursos computacionales requeridos.
 - `condor.sub: condor.header`: Genera cada uno de los jobs acorde a los archivos de salida generados por `bin/targets`.
+- `condor.header`: Genera el encabezado que utilizará condor para publicar en el anuncio los recursos computacionales requeridos.
 - `submit:V: init condor.sub`: Envia el archivo condor.sub a la cola de trabajos y para ello también requiere de init.
 - `init:V: condor.sub`: Genera la estructura de directorios que requiere condor previo al envio de trabajos.
 - `time:QV:` Calcula la diferencia de tiempo, en segundos, entre el envio del trabajo y el tiempo total de ejecución.
