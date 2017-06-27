@@ -241,7 +241,7 @@ Hola desde dell2
 ...
 ```
 
-- Para realizar esta tarea genere un directorio llamado hola que posea la estructura requerida por condor-mk
+- Para realizar esta tarea genere un directorio llamado hola que posea la estructura requerida por condor-mk:
 
 ```
 cd
@@ -252,7 +252,7 @@ mkdir -p hola/results
 cd hola
 ```
 
-- Cree el `mkfile` correspondiente para que realice el saludo para cualquier archivo `results/%.txt` utilizando el comando 
+- Cree el `mkfile` correspondiente para que realice el saludo y lo guarde en un archivo `results/%.txt` utilizando el comando:
 
 ```
 echo "Hola desde `hostname`"
@@ -260,7 +260,7 @@ echo "Hola desde `hostname`"
 
 como lo hicieramos en la sesión pasada utilizando *BUENAS PRÁCTICAS*.
 
-- Pruebe su `mkfile` para ver que funciona de forma correcta
+- Pruebe su `mkfile` para ver que funciona de forma correcta:
 
 ```
 mk results/hola1.txt
@@ -278,7 +278,7 @@ done
 
 recuerde cambiar los permisos acorde sea necesario.
 
-- Pruebe que el mk + bin/targets funcionan de forma local correctamente
+- Pruebe que el mk + bin/targets funcionan de forma local correctamente:
 
 ```
 bin/targets
@@ -287,7 +287,7 @@ ls results/
 rm results/*
 ```
 
-- Envie el trabajo al cluster completo y monitorize su estado
+- Envie el trabajo al cluster completo y monitorize su estado:
 
 ```
 condor submit
@@ -309,7 +309,7 @@ cat results/hola1.txt.condor_log
 ¿Cuántos recursos utilizó de los pedidos?
 ¿Cuánto tiempo demoró? Sugerencia: `condor time`
 
-- Borre la salidas condor y propias
+- Borre la salidas condor y propias:
 
 ```
 condor clean
@@ -327,7 +327,7 @@ condor_q -better-analize
 
 ¿Qué fue lo que pasó?
 
-- Finalmente remueva los trabajos que no puede realizarse
+- Finalmente remueva los trabajos que no puede realizarse:
 
 ```
 condor_rm -all
