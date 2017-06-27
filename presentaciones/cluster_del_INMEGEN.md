@@ -64,7 +64,7 @@ El gestor de colas de trabajo actualmente implementado es [HTCondor](https://res
 
 En `ROGUE1` la infraestructura se encuentra dispuesta de la siguente manera:
 
-![](../imagenes/htcondor_rogue1){align="center" width="60%"}
+![](../imagenes/htcondor_rogue1.png){align="center" width="60%"}
 
 ## Filosofía
 
