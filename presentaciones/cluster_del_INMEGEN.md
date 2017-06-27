@@ -148,7 +148,7 @@ condor.header:
 
 ```
 
-vemos que se define `vanilla` como universo de trabajo, el directorio inicial de trabajo desde donde se invocó `condor condor.header`, que *NO* transfiera los archivo ya que utilizaremos Network File System por defecto, utiliza el mismo `PATH` que se encuentra en sistema y por último los recursos computacionales neesarios (cantidad de cpus, memoria RAM y espacio en disco).
+vemos que se define `vanilla` como universo de trabajo, el directorio inicial de trabajo desde donde se invocó `condor condor.header`, que *NO* transfiera los archivo ya que utilizaremos Network File System por defecto, utiliza el mismo `PATH` que se encuentra en sistema y por último los recursos computacionales necesarios (cantidad de cpus, memoria RAM y espacio en disco).
 
 ### Condor.sub
 
@@ -179,7 +179,7 @@ que a su vez invoca a /usr/bin/condor-sub quien llama a /usr/lib/condor-mk/condo
 
 ```
 
-Es decir, una línea que llama al `executable` que en este caso es time para medir el tiempo, los argumentos es la invocación de `mk` con nuestro mkfile y uno de los objetivos del `bin/targets` y los tres registros de condor_(out/log/err). 
+Es decir, una línea que llama al `executable` que en este caso es `time` para medir el tiempo, los argumentos es la invocación de `mk` con nuestro mkfile y uno de los objetivos del `bin/targets` y los tres registros de condor_(out/log/err). 
 
 ## Comandos básicos de HTCondor
 
@@ -208,7 +208,7 @@ Adicionalmente se pueden ver los archivos generados por condor:
 
 - `results/%.condor_err`: Mensajes enviados a stderr por el programa utilizado de turno.
 - `results/%.condor.out`: Tareas registrada por mk y tiempo de ejecución.
-- `results/%.condor.log`: Registro de las actividades realizadas por HTCondor sobre el trabajo. Por ejemplo: se envio, comenzó a ejecutar, quedó en espera y resumen de recursos ocupados.
+- `results/%.condor.log`: Registro de las actividades realizadas por HTCondor sobre el trabajo. Por ejemplo: se envió, comenzó a ejecutar, quedó en espera y resumen de recursos ocupados.
 
 # Ejercicios
 
@@ -301,7 +301,7 @@ cat results/hola1.txt.condor_log
 
 ¿Corrió de forma apropiada? 
 	- Si, pase al punto siguiente.
-	- No. Verifique con `condor_q -hold` y si fuere el caso libere el trabajo con `condor_release -all` o remuevalo de la cola con `condor_rm -all`
+	- No. Verifique con `condor_q -hold` y si fuere el caso libere el trabajo con `condor_release -all` o remuévalo de la cola con `condor_rm -all`
 
 - Verifique la salida de `results/hola1.txt`, `results/hola1.txt.condor_err`, `results/hola1.txt.condor_out` y `results/hola1.txt.condor_log`
 
@@ -334,6 +334,6 @@ condor_rm -all
 ```
 
 
-5. Envie el trabajo real de la clase pasada, para realizar la búsqueda de secuencias con condor.
+5. Envié el trabajo real de la clase pasada, para realizar la búsqueda de secuencias con condor.
 
 
