@@ -9,7 +9,7 @@ author: "Cristóbal Fresno"
 
 El **clúster** se llama `ROGUE1` es un esfuerzo conjunto de la comunidad de INMEGEN en la cual han participado diferentes miembros de *Genómica Computacional*, *Unidad de Servicios Bioinformáticos*, *Unidad de Supercómputo*, *Departamento de Soporte Tecnológico* *Estudiantes* y diferentes grupos de investigación, para unificar la capacidad de cómputo instalada.
 
-![](../imagenes/AntesHoy.png ){align="center" width="60%"}
+![](../imagenes/AntesHoy.png )
 
 ## Misión
 
@@ -46,7 +46,7 @@ Consolidar la infraestructura para generar un equipo de bioinformáticos capaz d
 
 Actualmente `ROGUE1` se encuentra instalado en el **site** de INMEGEN en sótano 1 y se encuentra a cargo de la *Unidad de Supercómputo* que dirige el *Ing. Joshua Ismael Haase Hernández*. Básicamente ROGUE1 se encuentra compuesto por:
 
-![](../imagenes/Infraestructura.png){align="center" width="60%"}
+![](../imagenes/Infraestructura.png)
 
 una *unidad de cintas para backup*, un *storage de alta velocidad* y *nodos de cómputo*. A la fecha se posee de 208/300 núcleos, 1.6/2.0 TB de memoria RAM y storage de 50/200 TB, ambos dos últimos distribuidos. Esta capacidad se encuentra en constante crecimiento y esperamos poder contar con el apoyo es sus próximos proyectos de investigación.
 
@@ -54,7 +54,7 @@ Actualmente `ROGUE1` se encuentra basado en una arquitectura `heterogénea` de s
 
 # HTCondor
 
-![](../imagenes/htcondor.png){align="center" width="60%"}
+![](../imagenes/htcondor.png)
 
 El gestor de colas de trabajo actualmente implementado es [HTCondor](https://research.cs.wisc.edu/htcondor/). Para su correcta utilización es necesario conocer cómo se disponen los diferentes módulos de condor en el clúster:
 
@@ -64,7 +64,7 @@ El gestor de colas de trabajo actualmente implementado es [HTCondor](https://res
 
 En `ROGUE1` la infraestructura se encuentra dispuesta de la siguente manera:
 
-![](../imagenes/htcondor_rogue1.png){align="center" width="60%"}
+![](../imagenes/htcondor_rogue1.png)
 
 ## Filosofía
 
