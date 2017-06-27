@@ -210,7 +210,7 @@ $ exit
 
 ## Como instalar mk en nuestra máquina personal
 
-#### En GNU/Linux (debianoso)
+####En GNU/Linux (debianoso)
 
 Instalamos usando:
 
@@ -230,7 +230,7 @@ export PATH=$PATH:/usr/lib/plan9/bin
 $ nano ~/.bashrc
 ``` 
 
-#### En Mac
+####En Mac
 
 Instalamos usando [Homebrew](https://brew.sh/):
 
