@@ -336,4 +336,6 @@ condor_rm -all
 
 5. Envié el trabajo real de la clase pasada, para realizar la búsqueda de secuencias con condor.
 
-
+```
+git clone --branch=condormk /home/xihh/mk-debug/pato.git condor
+```
