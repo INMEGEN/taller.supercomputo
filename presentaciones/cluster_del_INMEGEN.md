@@ -5,44 +5,44 @@ subtitle: "Clúster del INMEGEN @ROGUE1"
 author: "Cristóbal Fresno"
 ---
 
-#Historia
+# Historia
 
 El **clúster** se llama `ROGUE1` es un esfuerzo conjunto de la comunidad de INMEGEN en la cual han participado diferentes miembros de *Genómica Computacional*, *Unidad de Servicios Bioinformáticos*, *Unidad de Supercómputo*, *Departamento de Soporte Tecnológico* *Estudiantes* y diferentes grupos de investigación, para unificar la capacidad de cómputo instalada.
 
 ![](../imagenes/AntesHoy.png ){align="center" width="60%"}
 
-##Misión
+## Misión
 
 Brindar el servicio de cómputo de alto rendimiento para abordar problemas de análisis de grandes volúmenes de datos de forma integrada, multidisciplinaria y novedosa, con la finalidad de satisfacer las necesidades bioinformáticas de los proyectos de investigación del *Instituto Nacional de Medicina Genómica*.
 
-##Visión
+## Visión
 
 Consolidar la infraestructura para generar un equipo de bioinformáticos capaz de generar y aplicar herramientas analíticas centradas en la medicina genómica; convirtiéndonos en un referente en la investigación científica a nivel nacional e internacional.
 
-#Qué ofrece el clúster de INMEGEN
+# Qué ofrece el clúster de INMEGEN
 
-##Datos
+## Datos
 
 - Confidencialidad en el acceso de los datos (grupos independientes).
 - Control de integridad en la recepción de los datos.
 - Redundancia y backups de los datos.
 
-##Software
+## Software
 
 - Instalación acorde a las necesidades de cada proyecto.
 - Actualizaciones de software.
 
-##Colas de trabajo
+## Colas de trabajo
 
 - Maximizar los recursos disponibles del clúster.
 - Esquema de prioridades conforme las necesidades del proyecto y la contribución.
 
-##Soporte
+## Soporte
 
 - Capacitación sobre herramientas (próximamente curso formal).
 - Asistencia personalizada en correr el flujo de trabajo requerido por el proyecto.
 
-#Infraestructura 
+# Infraestructura 
 
 Actualmente `ROGUE1` se encuentra instalado en el **site** de INMEGEN en sótano 1 y se encuentra a cargo de la *Unidad de Supercómputo* que dirige el *Ing. Joshua Ismael Haase Hernández*. Básicamente ROGUE1 se encuentra compuesto por:
 
@@ -52,7 +52,7 @@ una *unidad de cintas para backup*, un *storage de alta velocidad* y *nodos de c
 
 Actualmente `ROGUE1` se encuentra basado en una arquitectura `heterogénea` de servidores en lo que respecta a cantidad de núcleos de 64 bits, memoria RAM y almacenamiento, bajo Ubuntu Server 16.04.2 LTS. En este contexto es **MUY importante** que se mantenga `homogenea` la estructura lógica de software, por lo que invitamos a los usuarios a solicitar al `administrador` que se instale la misma versión de software en todos los nodos de cómputo.
 
-#HTCondor
+# HTCondor
 
 ![](../imagenes/htcondor.png){align="center" width="60%"}
 
@@ -66,7 +66,7 @@ En `ROGUE1` la infraestructura se encuentra dispuesta de la siguente manera:
 
 ![](../imagenes/htcondor_rogue1){align="center" width="60%"}
 
-##Filosofía
+## Filosofía
 
 Este gestor de colas trabaja bajo el paradirma de **anuncios de clasificados de periódico**. Así cada nodo de cómputo sabe que recursos computacionales posee y lee el periódico en busca de potenciales trabajos. Así, los trabajos que se envien a la cola deben tener una estructura que solicite los recursos computacionales adecuados y el primer nodo disponible tomará el trabajo. 
 
@@ -74,11 +74,11 @@ Los **anuncios** básicamente cuentan con un *encabezado* en el cual se definen 
 
 Por último, HTCondor no es una simple cola de trabajo sino que gestiona los recursos disponibles basado en un esquema de `prioridades`. Así, la prioridad por defecto se calcula con una ventana de tiempo de un (1) día, y se pondera inversamente a la carga de trabajo enviada, es decir, cuanto más trabajos se envien menor es la prioridad frente a un usuario que no envia trabajos. Claro está que también pueden existir cuotas por grupo de investigación, prioritarias sobre los equipos aportadas, etc. 
 
-#HTCondor-mk 
+# HTCondor-mk 
 
 No es una tarea fácil generar los archivos necesarios que requiere condor. No obstante, podemos utilizar lo que ya sabemos de `mk` para hacernos el día a día más fácil. Para ello, ya se cuenta con un paquete que realiza condor basado en mk (`condor-mk`).
 
-##Estructura de archivos de HTCondor 
+## Estructura de archivos de HTCondor 
 
 `condor-mk` requiere de la siguiente estructura de proyecto para poder funcionar de forma correcta:
  
@@ -125,7 +125,7 @@ donde encontramos:
 
 Para hacer más amigable el trabajo con condor-mk se creó el alias `condor <objetivo>` para evitar invocar mk -f /usr/lib/condor-mk/condor.mk <objetivo>.
 
-###Condor.header
+### Condor.header
 
 Viendo en detalle la receta de cocina:
 
@@ -150,7 +150,7 @@ condor.header:
 
 vemos que se define `vanilla` como universo de trabajo, el directorio inicial de trabajo desde donde se invocó `condor condor.header`, que *NO* transfiera los archivo ya que utilizaremos Network File System por defecto, utiliza el mismo `PATH` que se encuentra en sistema y por último los recursos computacionales neesarios (cantidad de cpus, memoria RAM y espacio en disco).
 
-###Condor.sub
+### Condor.sub
 
 Viendo en detalle la receta de cocina:
 
@@ -181,7 +181,7 @@ que a su vez invoca a /usr/bin/condor-sub quien llama a /usr/lib/condor-mk/condo
 
 Es decir, una línea que llama al `executable` que en este caso es time para medir el tiempo, los argumentos es la invocación de `mk` con nuestro mkfile y uno de los objetivos del `bin/targets` y los tres registros de condor_(out/log/err). 
 
-##Comandos básicos de HTCondor
+## Comandos básicos de HTCondor
 
 Para comunicarse con los diferentes módulos de condor hay que utilizar una suite de comandos del estilo `condor_xx` donde *xx* puede ser alguno de los siguientes:
 - `condor_status`: Muestra el estado de los nodos de cómputo.
@@ -194,7 +194,7 @@ Para comunicarse con los diferentes módulos de condor hay que utilizar una suit
 
 Una lista completa puede verse en el [manual](http://research.cs.wisc.edu/htcondor/manual/index.html) de HTCondor y/o en la sugerencia de comandos útiles [aquí](http://www.iac.es/sieinvens/siepedia/pmwiki.php?n=HOWTOs.CondorUsefulCommands).
 
-##Depurar errores
+## Depurar errores
 
 No todo es color de rosa y menos en HTCondor. Es por ello que posee de ciertas herramientas para debuguear como por ejemplo:
 
@@ -210,7 +210,7 @@ Adicionalmente se pueden ver los archivos generados por condor:
 - `results/%.condor.out`: Tareas registrada por mk y tiempo de ejecución.
 - `results/%.condor.log`: Registro de las actividades realizadas por HTCondor sobre el trabajo. Por ejemplo: se envio, comenzó a ejecutar, quedó en espera y resumen de recursos ocupados.
 
-#Ejercicios
+# Ejercicios
 
 1. ¿Cual es el nodo que mayor cantidad de memoria hay disponible? ¿Y en cantidad de núcleos?
 
