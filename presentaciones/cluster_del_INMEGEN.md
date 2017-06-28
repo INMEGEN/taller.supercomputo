@@ -42,7 +42,7 @@ Queremos consolidar la infraestructura para generar un equipo de bioinformático
 - Capacitación sobre herramientas (próximamente curso formal).
 - Asistencia personalizada en correr el flujo de trabajo requerido por el proyecto.
 
-# Infraestructura 
+# Infraestructura
 
 Actualmente `ROGUE1` se encuentra instalado en el *site* de INMEGEN, en sótano 1 y se encuentra a cargo de la *Unidad de Supercómputo* que dirige el *Ing. Joshua Ismael Haase Hernández*. Básicamente ROGUE1 se encuentra compuesto por:
 
@@ -60,7 +60,7 @@ El gestor de colas de trabajo actualmente implementado es [HTCondor](https://res
 
 - `Nodo cómputo`: Es aquel que realiza tareas de *procesamiento*.
 - `Nodo cola`: Es la cola de trabajo propiamente dicha y se pueden enviar/eliminar trabajos de ella.
-- `Nodo maestro`: Es aquel que *coordina/controla* las tareas entre la cola de trabajo y los nodos de cómputo 
+- `Nodo maestro`: Es aquel que *coordina/controla* las tareas entre la cola de trabajo y los nodos de cómputo
 
 En `ROGUE1` la infraestructura se encuentra dispuesta de la siguiente manera:
 
@@ -68,33 +68,33 @@ En `ROGUE1` la infraestructura se encuentra dispuesta de la siguiente manera:
 
 ## Filosofía
 
-Este gestor de colas trabaja bajo el paradigma de **anuncios de clasificados de periódico**. Así cada nodo de cómputo sabe que recursos computacionales posee y lee el periódico en busca de potenciales trabajos. Así, los trabajos que se envíen a la cola deben tener una estructura que solicite los recursos computacionales adecuados y el primer nodo disponible tomará el trabajo. 
+Este gestor de colas trabaja bajo el paradigma de **anuncios de clasificados de periódico**. Así cada nodo de cómputo sabe que recursos computacionales posee y lee el periódico en busca de potenciales trabajos. Así, los trabajos que se envíen a la cola deben tener una estructura que solicite los recursos computacionales adecuados y el primer nodo disponible tomará el trabajo.
 
 Los **anuncios** básicamente cuentan con un *encabezado* en el cual se definen recursos computacionales y un *cuerpo* donde se define el/los trabajo/s propiamente dichos. Más adelante volveremos sobre este tema en detalle.
 
-Por último, HTCondor no es una simple cola de trabajo sino que gestiona los recursos disponibles basado en un esquema de `prioridades`. Así, la prioridad por defecto se calcula con una ventana de tiempo de un (1) día, y se pondera inversamente a la carga de trabajo enviada, es decir, cuanto más trabajos se envíen menor es la prioridad frente a un usuario que no enviá trabajos. Claro está que también pueden existir cuotas por grupo de investigación, prioritarias sobre los equipos aportadas, etc. 
+Por último, HTCondor no es una simple cola de trabajo sino que gestiona los recursos disponibles basado en un esquema de `prioridades`. Así, la prioridad por defecto se calcula con una ventana de tiempo de un (1) día, y se pondera inversamente a la carga de trabajo enviada, es decir, cuanto más trabajos se envíen menor es la prioridad frente a un usuario que no enviá trabajos. Claro está que también pueden existir cuotas por grupo de investigación, prioritarias sobre los equipos aportadas, etc.
 
-# Condor-mk 
+# Condor-mk
 
 No es una tarea fácil generar los archivos necesarios que requiere condor. No obstante, podemos utilizar lo que ya sabemos de `mk` para hacernos el día a día más fácil. Para ello, ya se cuenta con un paquete que realiza condor basado en mk (`condor-mk`).
 
-## Estructura de archivos de Condor-Mk 
+## Estructura de archivos de Condor-Mk
 
 `Condor-mk` requiere de la siguiente estructura de proyecto para poder funcionar de forma correcta:
- 
+
 ```
 ./
 ├── mkfile
 ├── bin/
 │   └─── targets
 │   └─── otros_scripts
-├── data/ 
+├── data/
 │   └─── archivo_con_datos_1
 │   └─── archivo_con_datos_2
 │   └─── archivo_con_datos_1
 .   .           .
 .   .           .
-.   .           .     
+.   .           .
 └── results/
     └─── archivo_con_resultados_1
     └─── archivo_con_resultados_2
@@ -119,7 +119,7 @@ donde encontramos:
 - `submit:V: init condor.sub`: Envia el archivo condor.sub a la cola de trabajos y para ello también requiere de init.
 - `init:V: condor.sub`: Genera la estructura de directorios que requiere condor previo al envio de trabajos.
 - `time:QV:` Calcula la diferencia de tiempo, en segundos, entre el envio del trabajo y el tiempo total de ejecución.
-- `check:QV:` Muestra los archivos del `bin/targets` que aún no se han procesado. 
+- `check:QV:` Muestra los archivos del `bin/targets` que aún no se han procesado.
 - `clean:QV:` Borrar el archivo condor.sub y los results/*.condor_* temporales.
 - `mrproper:V: clean`: Borrar lo de clean y adicionalmente condor.header.
 
@@ -179,7 +179,7 @@ que a su vez invoca a /usr/bin/condor-sub quien llama a /usr/lib/condor-mk/condo
 
 ```
 
-Es decir, una línea que llama al `executable` que en este caso es `time` para medir el tiempo, los argumentos es la invocación de `mk` con nuestro mkfile y uno de los objetivos del `bin/targets` y los tres registros de condor_(out/log/err). 
+Es decir, una línea que llama al `executable` que en este caso es `time` para medir el tiempo, los argumentos es la invocación de `mk` con nuestro mkfile y uno de los objetivos del `bin/targets` y los tres registros de condor_(out/log/err).
 
 ## Comandos básicos de HTCondor
 
@@ -198,8 +198,8 @@ Una lista completa puede verse en el [manual](http://research.cs.wisc.edu/htcond
 
 No todo es color de rosa y menos en HTCondor. Es por ello que posee de ciertas herramientas para debuguear como por ejemplo:
 
-- `condor_q -analize`: Permite ver mayor información del trabajo (debug). 
-- `condor_q -better-analize`: Aumenta el grado de descripción de la tarea (debug).
+- `condor_q -analyze`: Permite ver mayor información del trabajo (debug).
+- `condor_q -better-analyze`: Aumenta el grado de descripción de la tarea (debug).
 - `condor_q -hold`: Muestra los trabajos que se encuentran en espera (*HOLD*), probablemente, falta de permisos, latencia de la red, etc.
 - `condor_release <id>`: Cambia el estado del trabajo <id> de HOLD a disponible (*IDLE*) para comprobar si se resolvió el inconveniente.
 - `condor_release -all`: Cambia el estado de todos los trabajos de HOLD a IDLE.
@@ -282,7 +282,7 @@ recuerde cambiar los permisos acorde sea necesario.
 
 ```
 bin/targets
-bin/targets | xargs mk 
+bin/targets | xargs mk
 ls results/
 rm results/*
 ```
@@ -299,7 +299,7 @@ cat results/hola1.txt.condor_err
 cat results/hola1.txt.condor_log
 ```
 
-¿Corrió de forma apropiada? 
+¿Corrió de forma apropiada?
 	- Si, pase al punto siguiente.
 	- No. Verifique con `condor_q -hold` y si fuere el caso libere el trabajo con `condor_release -all` o remuévalo de la cola con `condor_rm -all`
 
@@ -322,7 +322,7 @@ rm results/*
 
 ```
 condor_q -analyze
-condor_q -better-analize
+condor_q -better-analyze
 ```
 
 ¿Qué fue lo que pasó?
