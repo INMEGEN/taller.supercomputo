@@ -71,7 +71,7 @@ NO es un respaldo:
 
 ---
 
-[Presentación de git](presentaciones/git.md )
+[Presentación de git](git.md )
 
 ## Control de versiones
 
