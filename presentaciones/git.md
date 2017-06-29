@@ -6,7 +6,7 @@
 
 ## ¿Por qué necesitamos un control de versiones?
 
-![Un problema común.](imagenes/tesis.png)
+![Un problema común.](../imagenes/tesis.png)
 
 ---
 
@@ -18,35 +18,35 @@
 
 ## Git toma fotos de tu trabajo
 
-![Cada nodo es una foto.](imagenes/arbol-git.png )
+![Cada nodo es una foto.](../imagenes/arbol-git.png )
 
 ---
 
 ## El estudio fotográfico
 
 \
-![](imagenes/staging-area1.png ){height="4cm"}
+![](../imagenes/staging-area1.png ){height="4cm"}
 
 ---
 
 ## El estudio fotográfico
 
 \
-![retocar el trabajo](imagenes/staging-area2.png ){height="4cm"}
+![retocar el trabajo](../imagenes/staging-area2.png ){height="4cm"}
 
 ----
 
 ## El estudio fotográfico
 
 \
-![tomar la foto](imagenes/staging-area3.png ){height="4cm"}
+![tomar la foto](../imagenes/staging-area3.png ){height="4cm"}
 
 ----
 
 ## El estudio fotográfico
 
 \
-![guardarla en el album](imagenes/staging-area4.png ){height="4cm"}
+![guardarla en el album](../imagenes/staging-area4.png ){height="4cm"}
 
 # Usar git
 
@@ -214,14 +214,14 @@ alias glc="git log --cc"
 ## Esta es una historia real...
 
 \
-![](imagenes/codigo1.jpg)
+![](../imagenes/codigo1.jpg)
 
 ---
 
 ## Esto también pasa
 
 \
-![](imagenes/codigo2.jpg)
+![](../imagenes/codigo2.jpg)
 
 ---
 
