@@ -1,6 +1,10 @@
-% Uso básico de git ![](http://www.unixstickers.com/image/cache/data/stickers/git/git.sh-600x600.png){height="3cm"}
-% Joshua Haase
-% 2016-10-17 - INMEGEN
+---
+title: Uso básico de git
+author: Joshua Haase
+date: 2017-06-29 - INMEGEN
+---
+
+![](http://www.unixstickers.com/image/cache/data/stickers/git/git.sh-600x600.png)
 
 # ¿Por qué git?
 
@@ -25,28 +29,28 @@
 ## El estudio fotográfico
 
 \
-![](../imagenes/staging-area1.png ){height="4cm"}
+![](../imagenes/staging-area1.png )
 
 ---
 
 ## El estudio fotográfico
 
 \
-![retocar el trabajo](../imagenes/staging-area2.png ){height="4cm"}
+![retocar el trabajo](../imagenes/staging-area2.png )
 
 ----
 
 ## El estudio fotográfico
 
 \
-![tomar la foto](../imagenes/staging-area3.png ){height="4cm"}
+![tomar la foto](../imagenes/staging-area3.png )
 
 ----
 
 ## El estudio fotográfico
 
 \
-![guardarla en el album](../imagenes/staging-area4.png ){height="4cm"}
+![guardarla en el album](../imagenes/staging-area4.png )
 
 # Usar git
 
