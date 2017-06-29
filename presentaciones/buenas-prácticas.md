@@ -36,20 +36,6 @@ NO es un respaldo:
 - Recordar qué hicimos y por qué lo hicimos.
 - Integrar nuevas personas al proyecto.
 
-## Control de versiones
-
-- No necesariamente es un respaldo, pero podría serlo.
-
----
-
-[Presentación de git](presentaciones/git.md )
-
-## Control de versiones
-
-- [Git Flow](http://nvie.com/posts/a-successful-git-branching-model/ "Por qué usar git flow.")
-
-- [Referencia de `git flow`](https://danielkummer.github.io/git-flow-cheatsheet/#getting-started "Cómo usar git flow.")
-
 ## Estructura de archivos y permisos.
 
 ```
@@ -78,6 +64,20 @@ NO es un respaldo:
                    ├─── data/ -> ../001/results/
                    └─── results/
 ```
+
+## Control de versiones
+
+- No necesariamente es un respaldo, pero podría serlo.
+
+---
+
+[Presentación de git](presentaciones/git.md )
+
+## Control de versiones
+
+- [Git Flow](http://nvie.com/posts/a-successful-git-branching-model/ "Por qué usar git flow.")
+
+- [Referencia de `git flow`](https://danielkummer.github.io/git-flow-cheatsheet/#getting-started "Cómo usar git flow.")
 
 ## Consistencia en herramientas.
 
