@@ -172,6 +172,18 @@ git flow feature start documentar
 git flow feature finish documentar
 ```
 
+## git flow
+
+```
+git flow feature start malapata
+```
+
+Para borrar una rama que salió mal:
+
+```
+git branch -D feature/malapata
+```
+
 ## Saber más
 
 - [Una propuesta de flujo de trabajo con ramas](http://nvie.com/posts/a-successful-git-branching-model/ ) \
