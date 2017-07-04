@@ -54,7 +54,7 @@ meld
 
     - Configurar de la siguiente forma:
 
-[![](https://i.stack.imgur.com/B7r4t.png){width="5cm", align="center"}](https://superuser.com/questions/119792/how-to-use-x11-forwarding-with-putty )
+[![](https://i.stack.imgur.com/B7r4t.png)](https://superuser.com/questions/119792/how-to-use-x11-forwarding-with-putty )
 
 ## Resolver conflictos
 
@@ -147,7 +147,7 @@ git flow feature start documentar
 ```
 
 1. *Ejercicio 1*: Generar la documentación de algún proyecto usando este ejemplo.
-    Haz tantos commits como sea necesrio e intenta mantener semántico el trabajo.
+    Haz tantos commits como sea necesario e intenta mantener semántico el trabajo.
 
 ## git flow
 
