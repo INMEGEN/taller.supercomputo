@@ -35,7 +35,7 @@ lang: es-mx
 - Sistemas de verdad:
 
 ```
-ssh -X castillo.cluster.inmegen.gob.mx
+ssh -X [alumnoXX]@castillo.cluster.inmegen.gob.mx
 ```
 
 ## Usar meld
