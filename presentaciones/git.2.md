@@ -56,6 +56,10 @@ meld
 
 [![](https://i.stack.imgur.com/B7r4t.png)](https://superuser.com/questions/119792/how-to-use-x11-forwarding-with-putty )
 
+## Conectarse a castillo con interfaz gráfica (mac)
+
+Instalar [XQuartz](https://dl.bintray.com/xquartz/downloads/XQuartz-2.7.11.dmg )
+
 ## Resolver conflictos
 
 Verificar que el siguiente comando funciona:
