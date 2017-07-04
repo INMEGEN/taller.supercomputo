@@ -134,22 +134,45 @@ Para aplicar los cambios en la configuración:
 ![](data/imagenes/codigo2.jpg){width="5cm"} \
 \
 `git log --cc` nos da la respuesta si documentamos bien.
-# Usar git mejor
 
-## Git flow
+# Usar git mejor (`git flow`)
+
+## git flow
+
+[Por qué usar git flow](http://nvie.com/posts/a-successful-git-branching-model/ )
+
+[Cómo usar git flow](https://danielkummer.github.io/git-flow-cheatsheet/#getting_started )
+
+## git flow
+
+```
+git clone https://github.com/INMEGEN/proyecto-vacio
+cd proyecto-vacio
+git remote remove origin
+```
+
+## git flow
 
 ```
 git flow init
 ```
 
+## git flow
+
+```
+git flow feature start documentar
+```
+
+1. *Ejercicio 1*: Generar la documentación de algún proyecto usando este ejemplo.
+    Haz tantos commits como sea necesrio e intenta mantener semántico el trabajo.
+
+## git flow
+
+```
+git flow feature finish documentar
+```
 
 ## Saber más
-
-- [Tutorial de atlassian](https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud/create-the-repository ) \
-    <https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud/create-the-repository>
-
-- [Listado de tutoriales](http://sixrevisions.com/resources/git-tutorials-beginners/ ) \
-    <http://sixrevisions.com/resources/git-tutorials-beginners/>
 
 - [Una propuesta de flujo de trabajo con ramas](http://nvie.com/posts/a-successful-git-branching-model/ ) \
     <http://nvie.com/posts/a-successful-git-branching-model/>
