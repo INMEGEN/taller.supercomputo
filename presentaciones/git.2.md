@@ -91,13 +91,6 @@ alias gcm="git commit -m"
 alias ga="git add"
 alias gp="git push"
 alias gb="git branch"
-```
-
-## Vivir sin preocupaciones
-
-Agregar a `~/.bashrc`:
-
-```
 alias gl="git log"
 alias glc="git log --cc"
 ```
@@ -114,20 +107,10 @@ Para aplicar los cambios en la configuración:
 
 ## Esta es una historia real...
 
-\
-![](../imagenes/codigo1.jpg)
-
-## Esta es una historia real...
-
 ![](../imagenes/codigo1.jpg) \
 \
 `git bisect [funciona] [no-funciona]` nos ayuda a encontrar el problema.
 
-
-## Esto también pasa
-
-\
-![](../imagenes/codigo2.jpg)
 
 ## Esto también pasa
 
