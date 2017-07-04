@@ -171,3 +171,20 @@ git branch -D feature/malapata
 
 - [Una propuesta de flujo de trabajo con ramas](http://nvie.com/posts/a-successful-git-branching-model/ ) \
     <http://nvie.com/posts/a-successful-git-branching-model/>
+
+
+## Instalar XQuartz en Mac con Brew Cask
+
+[Brew Cask](https://caskroom.github.io/) permite instalar herramientas con interface gráfica a travez de línea de comandos.
+
+Para dar de alta a Cask:
+
+```
+brew tap caskroom/cask
+```
+
+Para instalar XQuartz
+
+```
+brew cask install xquartz
+```
