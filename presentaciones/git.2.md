@@ -115,11 +115,11 @@ Para aplicar los cambios en la configuración:
 ## Esta es una historia real...
 
 \
-![](data/imagenes/codigo1.jpg)
+![](../imagenes/codigo1.jpg)
 
 ## Esta es una historia real...
 
-![](data/imagenes/codigo1.jpg){width="5cm"} \
+![](../imagenes/codigo1.jpg) \
 \
 `git bisect [funciona] [no-funciona]` nos ayuda a encontrar el problema.
 
@@ -127,11 +127,11 @@ Para aplicar los cambios en la configuración:
 ## Esto también pasa
 
 \
-![](data/imagenes/codigo2.jpg)
+![](../imagenes/codigo2.jpg)
 
 ## Esto también pasa
 
-![](data/imagenes/codigo2.jpg){width="5cm"} \
+![](../imagenes/codigo2.jpg) \
 \
 `git log --cc` nos da la respuesta si documentamos bien.
 
