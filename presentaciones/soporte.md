@@ -9,21 +9,21 @@ author: "Joshua Haase"
 
 ## Nube
 
-![La nube no existe, es la computadora de alguien más.](imagenes/nube.jpg )
+![La nube no existe, es la computadora de alguien más.](../imagenes/nube.jpg )
 
 ## Servidor
 
-![Un servidor es una computadora, configurada para responder peticiones.](imagenes/server.png )
+![Un servidor es una computadora, configurada para responder peticiones.](../imagenes/server.png )
 
 ## Clúster
 
-![Muchas computadoras que pueden trabajar como una sola para resolver problemas.](imagenes/cluster_generic.png )
+![Muchas computadoras que pueden trabajar como una sola para resolver problemas.](../imagenes/cluster_generic.png )
 
 # Clúster
 
 ## Arquitectura
 
-![El clúster de INMEGEN «@ROGUE1».](imagenes/cluster.png)
+![El clúster de INMEGEN «@ROGUE1».](../imagenes/cluster.png)
 
 ## Cuellos de botella
 
@@ -37,11 +37,11 @@ author: "Joshua Haase"
 
 ## Lectura en disco / comunicación
 
-![Porque así son «los servidores».](imagenes/hardware.png)
+![Porque así son «los servidores».](../imagenes/hardware.png)
 
 ## Lectura en disco / comunicación
 
-![Porque así son «los servidores».](imagenes/bus-diagram.png)
+![Porque así son «los servidores».](../imagenes/bus-diagram.png)
 
 ## Lectura en disco / comunicación
 
@@ -76,7 +76,7 @@ Leer una vez, hacer todas las operaciones sobre la información de una sola vez.
 
 ## Comunicación
 
-![No pedirle a la computadora que ejecute más procesos de los que puede ejecutar.](imagenes/rutinas.jpg )
+![No pedirle a la computadora que ejecute más procesos de los que puede ejecutar.](../imagenes/rutinas.jpg )
 
 ## Lenguaje de programación
 
@@ -92,7 +92,7 @@ Leer una vez, hacer todas las operaciones sobre la información de una sola vez.
 ## Algoritmo
 
 \
-![](imagenes/caja.png )
+![](../imagenes/caja.png )
 
 - Si existe, usar otra estrategia para resolver el problema.
 
