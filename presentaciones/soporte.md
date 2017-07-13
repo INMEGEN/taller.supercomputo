@@ -9,21 +9,21 @@ author: "Joshua Haase"
 
 ## Nube
 
-![La nube no existe, es la computadora de alguien más.]()
+![La nube no existe, es la computadora de alguien más.](data/imagenes/nube.jpg )
 
 ## Servidor
 
-![Un servidor es una computadora, configurada para responder peticiones.]()
+![Un servidor es una computadora, configurada para responder peticiones.](data/imagenes/server.png )
 
 ## Clúster
 
-![Muchas computadoras que pueden trabajar como una sola para resolver problemas.]()
+![Muchas computadoras que pueden trabajar como una sola para resolver problemas.](data/imagenes/cluster_generic.png )
 
 # Clúster
 
 ## Arquitectura
 
-![El clúster.]()
+![El clúster de INMEGEN «@ROGUE1».](data/imagenes/cluster.png)
 
 ## Cuellos de botella
 
@@ -37,15 +37,26 @@ author: "Joshua Haase"
 
 ## Lectura en disco / comunicación
 
-- Leer una vez, hacer todas las operaciones sobre la información de una sola vez.
+![Porque así son «los servidores».](data/imagenes/hardware.png)
+
+## Lectura en disco / comunicación
+
+![Porque así son «los servidores».](data/imagenes/bus-diagram.png)
+
+## Lectura en disco / comunicación
+
+Leer una vez, hacer todas las operaciones sobre la información de una sola vez.
 
 ### ¿Cómo?
 
-- Probar que cada operación funciona correctamente por separado (test cases).
+- Probar que cada operación funciona correctamente por separado \
+    (test cases).
 
-- Usar un único ciclo para las operaciones (`for { op1; op2; ...; todo; }` / `proceso1 | proceso2 | proceso3`).
+- Usar un único ciclo para las operaciones \
+    (`for { op1; op2; ...; todo; }` \
+    `proceso1 | proceso2 | proceso3`).
 
-## [Off-topic] Tips para programar
+## [Off Topic] Tips para programar
 
 - Empezar a escribir el algoritmo en lenguaje natural.
 
@@ -57,15 +68,15 @@ author: "Joshua Haase"
 
 ## Lectura en disco / comunicación
 
-- No pedirle a la computadora que ejecute más procesos de los que puede ejecutar.
-
-## Lectura en disco / comunicación
-
 - Empacar toda la información necesaria en un único lugar.
 
 - Usar una estructura que permita la búsqueda (ordenar-indexar / estructurar).
 
 - **¡El algoritmo depende de la representación de los datos!**
+
+## Comunicación
+
+![No pedirle a la computadora que ejecute más procesos de los que puede ejecutar.](data/imagenes/rutinas.jpg )
 
 ## Lenguaje de programación
 
@@ -75,8 +86,13 @@ author: "Joshua Haase"
 
 ## Algoritmo
 
-- Cuando el programa tarda mucho incluso en lenguaje compilado,
-   el problema ~~es demasiado difícil~~ es el algoritmo.
+> Cuando el programa tarda mucho incluso en lenguaje compilado,
+>  el problema ~~es demasiado difícil~~ es el algoritmo.
+
+## Algoritmo
+
+\
+![](data/imagenes/caja.png )
 
 - Si existe, usar otra estrategia para resolver el problema.
 
@@ -95,7 +111,7 @@ author: "Joshua Haase"
 
 - ¡Dar detalles! (mientras más mejor):
 
-    - La carpeta de los datos (**con el `README.md`**).
+    - La carpeta del proyecto (**con sus `README.md`**).
 
     - El comando exacto que se ejecutó ¿por condor? ¿en la consola? ¿interfaz gráfica?.
 
@@ -103,7 +119,10 @@ author: "Joshua Haase"
 
 ## Cómo podemos ayudar
 
-- Ya tenemos varios problemas resueltos. No reinventen la rueda.
+- Ya tenemos [varios](https://github.com/INMEGEN?tab=repositories )
+    [problemas ](https://github.com/xihh87?tab=repositories )
+    [resueltos](https://github.com/hachepunto?tab=repositories )
+    No reinventen la rueda.
 
 - Revisar cuellos de botella en los flujos de trabajo.
 
