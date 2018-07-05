@@ -10,15 +10,15 @@ date: 2017-06-15
 
 ## Un servidor es un computadora más grande
 
-![Sí, cómo la tuya. (Pero más rápida, con más memoria, etc…)](../imagenes/server.png ){width=10cm}
+![Sí, cómo la tuya. (Pero más rápida, con más memoria, etc…)](../imagenes/server.png )
 
 ## Un clúster es un grupo de computadoras coordinadas para trabajar como una sola
 
-![O para ejecutar muchos procesos a la vez.](../imagenes/cluster_generic.png ){width=10cm}
+![O para ejecutar muchos procesos a la vez.](../imagenes/cluster_generic.png )
 
 ## La nube es la computadora de alguien más
 
-![Alguien más cuida la computadora y puedes dedicarte a usarla.](../imagenes/nube.jpg ){width=10cm}
+![Alguien más cuida la computadora y puedes dedicarte a usarla.](../imagenes/nube.jpg )
 
 # Qué cuidar cuando comparto el uso de un servidor
 
@@ -32,11 +32,11 @@ date: 2017-06-15
 
 ## Una buena contraseña es larga, aleatoria y única
 
-![Dos esquemas de contraseñas.](../imagenes/password_strength.png){width=10cm}
+![Dos esquemas de contraseñas.](../imagenes/password_strength.png)
 
 ## Para mantener muchas contraseñas seguras es recomendable usar un gestor de contraseñas
 
-![Un gestor de contraseñas.](../imagenes/keepass.png){width=8cm}
+![Un gestor de contraseñas.](../imagenes/keepass.png)
 
 ## Dos ejemplos de gestores de contraseñas
 
@@ -46,9 +46,9 @@ date: 2017-06-15
 
 ## Una clave pública permite asegurar información para que sólo pueda leerla quien tenga la clave privada
 
-![Clave pública.](../imagenes/candado.png){width=3cm}
+![Clave pública.](../imagenes/candado.png)
 
-![Clave privada.](../imagenes/llave.png){width=3cm}
+![Clave privada.](../imagenes/llave.png)
 
 # Confidencialidad
 
@@ -134,7 +134,7 @@ y sólo puede asignar un grupo al que pertenezca.**
 
 ## Usar permisos 777 es dejarle la puerta abierta a nuestros datos a todo el mundo
 
-![Permisos 777](../imagenes/permisos-777jpg){width=10cm}
+![Permisos 777](../imagenes/permisos-777jpg)
 
 # Cómo me aseguro de que la información que estoy guardando es la que necesito ![](https://azurecomcdn.azureedge.net/cvt-82fa5a5b61233507a1f07292e1e92f1f94134e7850b2e6516294f02a7b6466a5/images/page/services/storage/data-integrity.png)
 
@@ -175,7 +175,7 @@ $ md5sum data/seguridad.md
 7b34ad9b6b85fc7d89483f326d3a3ffd  data/seguridad.md
 ```
 
-![md5 ya es falsificable](../imagenes/2017-06-15-002117.png){width=10cm}
+![md5 ya es falsificable](../imagenes/2017-06-15-002117.png)
 
 <https://blog.avira.com/md5-the-broken-algorithm>
 
