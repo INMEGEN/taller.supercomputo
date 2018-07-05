@@ -188,6 +188,13 @@ Desde el la copia de los datos:
 sha256sum -c datos.sha256
 ```
 
+## Ejercicio
+
+```
+wget https://github.com/INMEGEN/taller.supercomputo/raw/master/ejercicios/datos.tar.gz
+tar -xf datos.tar.gz
+```
+
 # Cómo hacer más cómoda nuestra existencia
 
 ## Podemos guardar en `$HOME/.ssh/config` los parámetros de conexión a servidores remotos
