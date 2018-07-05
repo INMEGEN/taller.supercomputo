@@ -1,0 +1,31 @@
+Host *
+	# Evitar que se desconecte el servidor remoto por inactividad
+	ServerAliveInterval	100
+	TCPKeepAlive	yes
+
+	# Pedirle a ssh que autocomplete estas terminaciones
+	CanonicalDomains	cluster.inmegen.gob.mx	inmegen.gob.mx
+	CanonicalizeHostname	yes
+
+	# Pedir que nos muestre un identificador gráfico del servidor
+	VisualHostKey	yes
+
+Host *.inmegen.gob.mx
+	# Usar esta clave privada para entrar al servidor
+	IdentityFile	~/.ssh/inmegen
+	# Usar este usuario cuando nos conectemos al servidor
+	User	
+
+Host cluster.inmegen.gob.mx
+	# Desde fuera de INMEGEN, entramos con este puerto al clúster
+	Port	5263
+
+Host *
+	# Usar una sola conexión de ssh para conectarnos muchas veces al servidor
+	ControlMaster	auto
+	ControlPath	~/.ssh/cm_socket/%r@%h:%p
+
+	# Usar programas gráficos desde el servidor remoto
+	# (Esto requiere que tengamos un programa para compartir interfaz gráfica: X11)
+	ForwardX11	yes
+
