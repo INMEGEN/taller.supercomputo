@@ -46,6 +46,12 @@ Verificar que el siguiente comando funciona:
 meld
 ```
 
+Configurar git para usar meld:
+
+```
+git config --global merge.tool meld
+```
+
 ## Conectarse a castillo con interfaz gráfica
 
 - [Windows](https://superuser.com/questions/119792/how-to-use-x11-forwarding-with-putty ):

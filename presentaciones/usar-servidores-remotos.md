@@ -10,15 +10,15 @@ date: 2017-06-15
 
 ## Un servidor es un computadora más grande
 
-![Sí, cómo la tuya. (Pero más rápida, con más memoria, etc…)](../imagenes/server.png )
+![Sí, cómo la tuya. (Pero más rápida, con más memoria, etc…)](../imagenes/server.png ){width=10cm}
 
 ## Un clúster es un grupo de computadoras coordinadas para trabajar como una sola
 
-![O para ejecutar muchos procesos a la vez.](../imagenes/cluster_generic.png )
+![O para ejecutar muchos procesos a la vez.](../imagenes/cluster_generic.png ){width=10cm}
 
 ## La nube es la computadora de alguien más
 
-![Alguien más cuida la computadora y puedes dedicarte a usarla.](../imagenes/nube.jpg )
+![Alguien más cuida la computadora y puedes dedicarte a usarla.](../imagenes/nube.jpg ){width=10cm}
 
 # Qué cuidar cuando comparto el uso de un servidor
 
@@ -32,11 +32,13 @@ date: 2017-06-15
 
 ## Una buena contraseña es larga, aleatoria y única
 
-![Dos esquemas de contraseñas.](http://imgs.xkcd.com/comics/password_strength.png)
+![Dos esquemas de contraseñas.](../imagenes/password_strength.png){width=10cm}
 
 ## Para mantener muchas contraseñas seguras es recomendable usar un gestor de contraseñas
 
-![Un gestor de contraseñas.](http://keepass.info/screenshots/keepass_2x/main_big.png)
+![Un gestor de contraseñas.](../imagenes/keepass.png){width=8cm}
+
+## Dos ejemplos de gestores de contraseñas
 
 <http://keepass.info>
 
@@ -44,9 +46,9 @@ date: 2017-06-15
 
 ## Una clave pública permite asegurar información para que sólo pueda leerla quien tenga la clave privada
 
-![Clave pública.](../imagenes/candado.png)
+![Clave pública.](../imagenes/candado.png){width=3cm}
 
-![Clave privada.](https://cdn3.iconfinder.com/data/icons/wpzoom-developer-icon-set/500/104-512.png)
+![Clave privada.](../imagenes/llave.png){width=3cm}
 
 # Confidencialidad
 
@@ -67,6 +69,8 @@ grupo
    421    |   421    |   421
 ---------------------------------
 : Contextos para permisos en unix
+
+## Cada archivo de unix tiene asignados permisos en 3 contextos: usuario, grupo y otros
 
 ¿Cómo ver los permisos?
 
@@ -130,7 +134,7 @@ y sólo puede asignar un grupo al que pertenezca.**
 
 ## Usar permisos 777 es dejarle la puerta abierta a nuestros datos a todo el mundo
 
-![Permisos 777](https://img.devrant.io/devrant/rant/r_574536_X1cAX.jpg)
+![Permisos 777](../imagenes/permisos-777jpg){width=10cm}
 
 # Cómo me aseguro de que la información que estoy guardando es la que necesito ![](https://azurecomcdn.azureedge.net/cvt-82fa5a5b61233507a1f07292e1e92f1f94134e7850b2e6516294f02a7b6466a5/images/page/services/storage/data-integrity.png)
 
@@ -171,7 +175,7 @@ $ md5sum data/seguridad.md
 7b34ad9b6b85fc7d89483f326d3a3ffd  data/seguridad.md
 ```
 
-![md5 ya es falsificable](../imagenes/2017-06-15-002117.png)
+![md5 ya es falsificable](../imagenes/2017-06-15-002117.png){width=10cm}
 
 <https://blog.avira.com/md5-the-broken-algorithm>
 
