@@ -1,29 +1,35 @@
-# Curso-Taller: Supercómputo en el Instituto Nacional de Medicina Genómica (México)
- 
+# Curso-Taller: Principios de Bioinformática
+
 ### Objetivos:
-  1. Introducir a las herramientas necesarias para el uso del clúster del INMEGEN.
-  2. Aprender buenas prácticas de bioinformática en proyectos de investigación.
+
+  1. Aprender buenas prácticas de bioinformática en proyectos de investigación.
+  2. Introducir a las herramientas necesarias para aplicarlas.
 
 
 ### Ponentes:
-  - Joshua Ismael Haase Hernández (Unidad de Supercómputo, INMEGEN).
-  - Hugo Antonio Tovar Romero (Unidad de Servicios Bioinformáticos, INMEGEN).
+
+  - Joshua Ismael Haase Hernández (Subdirección de Bioinformática, INMEGEN).
   - Cristóbal Fresno Rodríguez (Genómica Poblacional y Bioinformática, INMEGEN).
+  - Hugo Antonio Tovar Romero (Departamento de Servicios Bioinformáticos, INMEGEN).
 
 ### Destinatarios:
-  Investigadores y estudiantes que requieran utilizar el clúster.
 
+Al público en general que requiera hacer bioinformática.
 
-- Cupo: 
+- Cupo:
+
    Alrededor de 55 personas.
 
 ### Modalidad:
+
   - Teórico/práctico
-  - 3 horas al día, 2 veces por semana (martes y jueves de 11 a 14 horas).
-  - Duración: 12 sesiones en 6 semanas.
+  - 3 horas al día, 2 veces por semana (miércoles y jueves de 11 a 14 horas).
+  - Duración: 16 sesiones en 8 semanas.
 
 ### Ediciones:
+
   - 1a Edición: Del 13 de junio al 18 de julio de 2017
+  - 2a Edición: Del 27 de junio al 16 de agosto de 2018
 
 ## Temas
 
@@ -38,7 +44,7 @@
  
 
 Requerimientos por alumno:
--
+
 Laptop con los siguientes requerimientos:
 
 - Sistema tipo UNIX (GNU/Linux o Mac, BSD).
@@ -48,7 +54,7 @@ Laptop con los siguientes requerimientos:
 
 ## Requerimientos técnicos de infraestructura:
 
-- Espacio para 51 personas con sus computadoras personales.
+- Espacio para 55 personas con sus computadoras personales.
 - Cañón y pantalla para proyección.
 - Conectividad para 55 personas por ssh desde el áula hasta el sitio del INMEGEN.
 
