@@ -239,3 +239,13 @@ sshfs castillo: ~/ssh/castillo \
 # Desconectamos el servidor remoto
 fusermount -u ~/ssh/castillo
 ```
+
+# Se usa `umask` para dar permisos por defecto a los archivos nuevos
+
+```
+# Para trabajar archivos en el clúster, conviene usar estos permisos:
+umask 007
+
+# Los permisos por defecto en las computadoras son:
+umask 022
+```
