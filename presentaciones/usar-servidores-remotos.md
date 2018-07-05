@@ -62,12 +62,10 @@ grupo
 
 ## Cada archivo de unix tiene asignados permisos en 3 contextos: usuario, grupo y otros
 
----------------------------------
  Usuario  | Grupo    | Otros
 ----------|----------|-----------
    rwx    |   rwx    |   rwx
    421    |   421    |   421
----------------------------------
 : Contextos para permisos en unix
 
 ## Cada archivo de unix tiene asignados permisos en 3 contextos: usuario, grupo y otros
@@ -83,25 +81,21 @@ permisos     usuario grupo
 
 ## Los permisos tienen un valor numérico y una representación en letras
 
------------------------------------------------------------------
 Permiso    |Abreviatura | Valor |Utilidad
 -----------|------------|-------|--------------------------------
  Lectura   | r (read)   |   4   |¿Puedo ver los datos?
  Escritura | w (write)  |   2   |¿Puedo cambiar los datos?
  Ejecución | x (execute)|   1   |¿Puedo usar este programa?
------------------------------------------------------------------
 : Permisos en unix
 
 
 ## Ejemplo de permisos
 
-----------------------------------------
   Permisos |  Usuario | Grupo   | Otros
 -----------|----------|---------|-------
  123       |   --x    |  -w-    |  -wx
  456       |   r--    |  r-x    |  rw-
  755       |   rwx    |  r-x    |  r-x
-----------------------------------------
 
 ## Para cambiar los permisos se utiliza el comando `chmod` (change mode):
 
@@ -134,9 +128,12 @@ y sólo puede asignar un grupo al que pertenezca.**
 
 ## Usar permisos 777 es dejarle la puerta abierta a nuestros datos a todo el mundo
 
-![Permisos 777](../imagenes/permisos-777jpg)
+![Permisos 777](../imagenes/permisos-777.jpg)
 
-# Cómo me aseguro de que la información que estoy guardando es la que necesito ![](https://azurecomcdn.azureedge.net/cvt-82fa5a5b61233507a1f07292e1e92f1f94134e7850b2e6516294f02a7b6466a5/images/page/services/storage/data-integrity.png)
+
+# Cómo me aseguro de que la información que estoy guardando es la que necesito
+
+![](https://azurecomcdn.azureedge.net/cvt-82fa5a5b61233507a1f07292e1e92f1f94134e7850b2e6516294f02a7b6466a5/images/page/services/storage/data-integrity.png)
 
 ## ¿Por qué podría no estar bien mi información?
 
@@ -168,16 +165,14 @@ b86f979c3e33ea6c2bc3fb8e423edd9f  -
 
 ## Un buen resumen criptográfico no puede falsificarse
 
-- No es falsificable.
-
 ```
 $ md5sum data/seguridad.md
 7b34ad9b6b85fc7d89483f326d3a3ffd  data/seguridad.md
 ```
 
-![md5 ya es falsificable](../imagenes/2017-06-15-002117.png)
+## [`md5sum` ya no puede protegernos de alteración intencional](https://blog.avira.com/md5-the-broken-algorithm "")
 
-<https://blog.avira.com/md5-the-broken-algorithm>
+![md5 ya es falsificable](../imagenes/2017-06-15-002117.png)
 
 ## Podemos verificar los datos de un directorio con el programa `sha256sum`
 
