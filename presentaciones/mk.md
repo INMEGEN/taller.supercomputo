@@ -12,6 +12,12 @@ con los siguientes
 Entonces sólo ejecutamos esos comandos 1700
 veces.
 
+## Descarguemos los ejercicios
+
+```
+git clone https://github.com/INMEGEN/ejercicios-mk
+```
+
 ## Ejercicio 1 ¿La secuencia P\_49627 se encuentra en el conjunto de datos C2?
 
 . .
@@ -19,6 +25,7 @@ veces.
 
     bin/get_seq seq/P_49627.txt data/C2.fastq > results/P_49627@C2.fastq.extras
     bin/clean_seq results/P_49627@C2.fastq.extras > results/P_49627@C2.fastq
+
 
 ## `mk` es una herramienta para automatizar trabajos
 
