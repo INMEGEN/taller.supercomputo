@@ -27,7 +27,7 @@ veces.
 ## `mk` requiere un archivo de configuración que tiene la forma
 
 `objetivo($target):ATTRIBUTOS: ingredientes($prereq)`  
-`receta(instrucciones)`
+`<tab> receta(instrucciones)`
 
 Se usa  para indicar los comandos de una *receta*.
 
