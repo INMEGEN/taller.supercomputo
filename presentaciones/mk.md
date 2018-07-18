@@ -52,10 +52,10 @@ hacerlas.
 
   - Nombrar el platillo (\(target) y los ingredientes (\)prereq).
 
-\<algo\> asado:
+pato asado:
 
     $ cat mkfile
-    results/%.asado:    data/%
+    results/pato.asado:    data/pato
 
 ## Luego se agrega la receta
 
@@ -64,7 +64,7 @@ hacerlas.
     # se vuelve:
     #
     $ cat mkfile
-    results/%.asado:    data/%
+    results/pato.asado:    data/pato
         asar --con-pimiemta $prereq > $target
 
 ## Y finalmente podemos usar el recetario
@@ -116,8 +116,44 @@ variables
     # se vuelve:
     #
     $ cat mkfile
-    results/%.asado:    data/%
+    results/pato.asado:    data/pato
         asar --con-pimiemta $prereq > $target
+
+    results/bistec.asado:    data/bistec
+        asar --con-pimienta $prereq > $target
+
+    results/pollo.asado:    data/pollo
+        asar --con-pimienta $prereq > $target
+
+## En ocasiones muchas recetas comparten la misma estructura
+
+    $ asar --con-pimienta data/pato > results/pato.asado
+    $ asar --con-pimienta data/bistec > results/bistec.asado
+    $ asar --con-pimienta data/pollo > results/pollo.asado
+    #
+    # se vuelve:
+    #
+    $ cat mkfile
+    results/pato.asado:    data/pato
+        asar --con-pimienta $prereq > $target
+
+    results/bistec.asado:    data/bistec
+        asar --con-pimienta $prereq > $target
+
+    results/pollo.asado:    data/pollo
+        asar --con-pimienta $prereq > $target
+
+## Se puede generalizar una receta usando un comodín (%)
+
+    $ asar --con-pimienta data/pato > results/pato.asado
+    $ asar --con-pimienta data/bistec > results/bistec.asado
+    $ asar --con-pimienta data/pollo > results/pollo.asado
+    #
+    # se vuelve:
+    #
+    $ cat mkfile
+    results/%.asado:    data/%
+        asar --con-pimienta $prereq > $target
 
 ## Ejercicio 5: Hacer que el objetivo final `.fastq` sea general:
 
