@@ -60,23 +60,25 @@ Una analogía para entender `mk`: `mk` es el cocinero, `mkfile` el recetario
 Para hacer un mk tenemos que tener claro el platillo y los ingredientes
 -----------------------------------------------------------------------
 
--   Nombrar el platillo ((target) y los ingredientes ()prereq).
+Nombrar el platillo ($target) y los ingredientes ($prereq):
 
-pato asado:
-
-    $ cat mkfile
-    results/pato.asado:    data/pato
+```
+$ cat mkfile
+results/pato.asado:    data/pato
+```
 
 Luego se agrega la receta
 -------------------------
 
-    $ asar --con-pimienta pato > pato.asado
-    #
-    # se vuelve:
-    #
-    $ cat mkfile
-    results/pato.asado:    data/pato
-        asar --con-pimiemta $prereq > $target
+```
+$ asar --con-pimienta pato > pato.asado
+#
+# se vuelve:
+#
+$ cat mkfile
+results/pato.asado:    data/pato
+    asar --con-pimiemta $prereq > $target
+```
 
 Y finalmente podemos usar el recetario
 --------------------------------------
@@ -85,8 +87,6 @@ Y finalmente podemos usar el recetario
 
 Ejercicio 2: ¿Cuál es el platillo y el ingrediente para encontrar la secuencia P\_49627 en el conjunto de datos C2?
 -------------------------------------------------------------------------------------------------------------------
-
-¿La secuencia P\_49627 se encuentra en el conjunto de datos C2?
 
 ```
 bin/get_seq seq/P_49627.txt data/C2.fastq > results/P_49627@C2.fastq.extras
@@ -111,7 +111,7 @@ Sabremos que funciona porque tendremos el resultado correcto al ejecutar
 mk results/P_49627@C2.fastq
 ```
 
-Ejercicio 4: En cada una de la receta ¿Cuál es el platillo que estamos preparando ((target)? ¿Cuáles son los ingredientes ()prereq)?
+Ejercicio 4: En cada una de la receta ¿Cuál es el platillo que estamos preparando ($target)? ¿Cuáles son los ingredientes ($prereq)?
 ====================================================================================================================================
 
 Reemplazar dentro de la receta, el platillo y los ingredientes por variables
@@ -124,25 +124,6 @@ results/P_49627@C2.fastq:	results/P_49627@C2.fastq.extras
 results/P_49627@C2.fastq.extras:	seq/P_49627.txt	data/C2.fastq
 	bin/get_seq seq/P_49627.txt	data/C2.fastq > results/P_49627@C2.fastq.extras
 ```
-
-Una receta puede hacerse general usando comodines
--------------------------------------------------
-
-    $ asar --con-pimienta pato > pato.asado
-    $ asar --con-pimienta bistec > bistec.asado
-    $ asar --con-pimienta pollo > pollo.asado
-    #
-    # se vuelve:
-    #
-    $ cat mkfile
-    results/pato.asado:    data/pato
-        asar --con-pimienta $prereq > $target
-
-    results/bistec.asado:    data/bistec
-        asar --con-pimienta $prereq > $target
-
-    results/pollo.asado:    data/pollo
-        asar --con-pimienta $prereq > $target
 
 En ocasiones muchas recetas comparten la misma estructura
 ---------------------------------------------------------

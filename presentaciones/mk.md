@@ -14,9 +14,7 @@ veces.
 
 ## Descarguemos los ejercicios
 
-```
-git clone https://github.com/INMEGEN/ejercicios-mk
-```
+    git clone https://github.com/INMEGEN/ejercicios-mk
 
 ## Ejercicio 1 ¿La secuencia P\_49627 se encuentra en el conjunto de datos C2?
 
@@ -25,7 +23,6 @@ git clone https://github.com/INMEGEN/ejercicios-mk
 
     bin/get_seq seq/P_49627.txt data/C2.fastq > results/P_49627@C2.fastq.extras
     bin/clean_seq results/P_49627@C2.fastq.extras > results/P_49627@C2.fastq
-
 
 ## `mk` es una herramienta para automatizar trabajos
 
@@ -36,10 +33,10 @@ git clone https://github.com/INMEGEN/ejercicios-mk
 `objetivo($target):ATTRIBUTOS: ingredientes($prereq)`  
 `<tab> receta(instrucciones)`
 
-Se usa  para indicar los comandos de una *receta*.
+Se usa `<tab>` para indicar los comandos de una *receta*.
 
-Por defecto `mk` hace
-.
+Por defecto `mk` hace el primer
+objetivo.
 
 ## Una analogía para entender `mk`: `mk` es el cocinero, `mkfile` el recetario
 
@@ -50,9 +47,7 @@ hacerlas.
 
 ## Para hacer un mk tenemos que tener claro el platillo y los ingredientes
 
-  - Nombrar el platillo (\(target) y los ingredientes (\)prereq).
-
-pato asado:
+Nombrar el platillo (\$target) y los ingredientes (\$prereq):
 
     $ cat mkfile
     results/pato.asado:    data/pato
@@ -73,9 +68,6 @@ pato asado:
 
 ## Ejercicio 2: ¿Cuál es el platillo y el ingrediente para encontrar la secuencia P\_49627 en el conjunto de datos C2?
 
-¿La secuencia P\_49627 se encuentra en el conjunto de datos
-    C2?
-
     bin/get_seq seq/P_49627.txt data/C2.fastq > results/P_49627@C2.fastq.extras
     bin/clean_seq results/P_49627@C2.fastq.extras > results/P_49627@C2.fastq
 
@@ -95,7 +87,7 @@ ejecutar
 
     mk results/P_49627@C2.fastq
 
-# Ejercicio 4: En cada una de la receta ¿Cuál es el platillo que estamos preparando (\(target)? ¿Cuáles son los ingredientes (\)prereq)?
+# Ejercicio 4: En cada una de la receta ¿Cuál es el platillo que estamos preparando (\$target)? ¿Cuáles son los ingredientes (\$prereq)?
 
 Reemplazar dentro de la receta, el platillo y los ingredientes por
 variables
@@ -106,24 +98,6 @@ variables
     
     results/P_49627@C2.fastq.extras:    seq/P_49627.txt data/C2.fastq
         bin/get_seq seq/P_49627.txt data/C2.fastq > results/P_49627@C2.fastq.extras
-
-## Una receta puede hacerse general usando comodines
-
-    $ asar --con-pimienta pato > pato.asado
-    $ asar --con-pimienta bistec > bistec.asado
-    $ asar --con-pimienta pollo > pollo.asado
-    #
-    # se vuelve:
-    #
-    $ cat mkfile
-    results/pato.asado:    data/pato
-        asar --con-pimiemta $prereq > $target
-
-    results/bistec.asado:    data/bistec
-        asar --con-pimienta $prereq > $target
-
-    results/pollo.asado:    data/pollo
-        asar --con-pimienta $prereq > $target
 
 ## En ocasiones muchas recetas comparten la misma estructura
 
@@ -136,10 +110,10 @@ variables
     $ cat mkfile
     results/pato.asado:    data/pato
         asar --con-pimienta $prereq > $target
-
+    
     results/bistec.asado:    data/bistec
         asar --con-pimienta $prereq > $target
-
+    
     results/pollo.asado:    data/pollo
         asar --con-pimienta $prereq > $target
 
