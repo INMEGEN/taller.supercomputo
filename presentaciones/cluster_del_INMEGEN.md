@@ -48,7 +48,7 @@ Actualmente `ROGUE1` se encuentra instalado en el *site* de INMEGEN, en sótano 
 
 ![](../imagenes/Infraestructura.png)
 
-una *unidad de cintas para backup*, un *storage de alta velocidad* y *nodos de cómputo*. A la fecha se posee de 208/300 núcleos, 1.6/2.0 TB de memoria RAM y storage de 50/200 TB, ambos dos últimos distribuidos. Esta capacidad se encuentra en constante crecimiento y esperamos poder contar con el apoyo es sus próximos proyectos de investigación.
+una *unidad de cintas para backup*, un *storage de alta velocidad* y *nodos de cómputo*. A la fecha se posee de 208/388 núcleos, 1.6/3.0 TB de memoria RAM y storage de 50/210 TB, ambos dos últimos distribuidos. Esta capacidad se encuentra en constante crecimiento y esperamos poder contar con el apoyo es sus próximos proyectos de investigación.
 
 Actualmente `ROGUE1` se encuentra basado en una arquitectura `heterogénea` de servidores en lo que respecta a cantidad de núcleos de 64 bits, memoria RAM y almacenamiento, bajo Ubuntu Server 16.04.2 LTS. En este contexto es **MUY importante** que se mantenga `homogenea` la estructura lógica de software, por lo que invitamos a los usuarios a solicitar al `administrador` que se instale la misma versión de software en todos los nodos de cómputo.
 
