@@ -7,7 +7,7 @@ author: "Cristóbal Fresno"
 
 # Historia
 
-El **Clúster** del INMEGEN se llama `ROGUE1` y es un esfuerzo conjunto de la comunidad de INMEGEN en la cual han participado diferentes miembros de *Genómica Computacional*, *Unidad de Servicios Bioinformáticos*, *Unidad de Supercómputo*, *Departamento de Soporte Tecnológico* *Estudiantes* y diferentes grupos de investigación. Tiene como principal idea unificar la capacidad de cómputo instalada.
+El **Clúster** del INMEGEN se llama `ROGUE1` y es un esfuerzo conjunto de la comunidad de INMEGEN en la cual han participado diferentes miembros de *Genómica Computacional*, *Unidad de Servicios Bioinformáticos*, *Subdirección de Bioinformática*, *Departamento de Soporte Tecnológico*, *Estudiantes* y diferentes grupos de investigación. Tiene como principal idea unificar la capacidad de cómputo instalada.
 
 ![](../imagenes/AntesHoy.png )
 
@@ -44,7 +44,7 @@ Queremos consolidar la infraestructura para generar un equipo de bioinformático
 
 # Infraestructura
 
-Actualmente `ROGUE1` se encuentra instalado en el *site* de INMEGEN, en sótano 1 y se encuentra a cargo de la *Unidad de Supercómputo* que dirige el *Ing. Joshua Ismael Haase Hernández*. Básicamente ROGUE1 se encuentra compuesto por:
+Actualmente `ROGUE1` se encuentra instalado en el *site* de INMEGEN, en sótano 1 y se encuentra a cargo de la *Subdirección de Bioinformática* que dirige el *Ing. Joshua Ismael Haase Hernández*. Básicamente ROGUE1 se encuentra compuesto por:
 
 ![](../imagenes/Infraestructura.png)
 
