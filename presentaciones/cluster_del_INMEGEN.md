@@ -332,10 +332,20 @@ condor_q -better-analyze
 ```
 condor_rm -all
 ```
+5. Repita el ejercicio anterior de enviar 3000 hola desde hostname, modificando su mkfile para:
 
+- Creación del directorio de salida
+- Mecanismo de candado para el archivo de salida.
 
-5. Envié el trabajo real de la clase pasada, para realizar la búsqueda de secuencias con condor.
+6. Utilice la plantilla "new" para poder crear el proyecto
+
+- new -- vea las diferentes opciones
+- Cree el proyecto
+- Modifique para obtener un resultados similar al punto 5
+
+7. Utilizando la plantilla, adapte el pipeline de búsqueda de cadena en un archivo fastq con condor.
 
 ```
 git clone --branch=condormk /home/xihh/mk-debug/pato.git condor
 ```
+
