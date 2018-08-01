@@ -7,7 +7,7 @@ author: "Cristóbal Fresno"
 
 # Historia
 
-El **Clúster** del INMEGEN se llama `ROGUE1` y es un esfuerzo conjunto de la comunidad de INMEGEN en la cual han participado diferentes miembros de *Genómica Computacional*, *Unidad de Servicios Bioinformáticos*, *Unidad de Supercómputo*, *Departamento de Soporte Tecnológico* *Estudiantes* y diferentes grupos de investigación. Tiene como principal idea unificar la capacidad de cómputo instalada.
+El **Clúster** del INMEGEN se llama `ROGUE1` y es un esfuerzo conjunto de la comunidad de INMEGEN en la cual han participado diferentes miembros de *Genómica Computacional*, *Unidad de Servicios Bioinformáticos*, *Subdirección de Bioinformática*, *Departamento de Soporte Tecnológico*, *Estudiantes* y diferentes grupos de investigación. Tiene como principal idea unificar la capacidad de cómputo instalada.
 
 ![](../imagenes/AntesHoy.png )
 
@@ -44,11 +44,11 @@ Queremos consolidar la infraestructura para generar un equipo de bioinformático
 
 # Infraestructura
 
-Actualmente `ROGUE1` se encuentra instalado en el *site* de INMEGEN, en sótano 1 y se encuentra a cargo de la *Unidad de Supercómputo* que dirige el *Ing. Joshua Ismael Haase Hernández*. Básicamente ROGUE1 se encuentra compuesto por:
+Actualmente `ROGUE1` se encuentra instalado en el *site* de INMEGEN, en sótano 1 y se encuentra a cargo de la *Subdirección de Bioinformática* que dirige el *Ing. Joshua Ismael Haase Hernández*. Básicamente ROGUE1 se encuentra compuesto por:
 
 ![](../imagenes/Infraestructura.png)
 
-una *unidad de cintas para backup*, un *storage de alta velocidad* y *nodos de cómputo*. A la fecha se posee de 208/300 núcleos, 1.6/2.0 TB de memoria RAM y storage de 50/200 TB, ambos dos últimos distribuidos. Esta capacidad se encuentra en constante crecimiento y esperamos poder contar con el apoyo es sus próximos proyectos de investigación.
+una *unidad de cintas para backup*, un *storage de alta velocidad* y *nodos de cómputo*. A la fecha se posee de 208/388 núcleos, 1.6/3.0 TB de memoria RAM y storage de 50/210 TB, ambos dos últimos distribuidos. Esta capacidad se encuentra en constante crecimiento y esperamos poder contar con el apoyo es sus próximos proyectos de investigación.
 
 Actualmente `ROGUE1` se encuentra basado en una arquitectura `heterogénea` de servidores en lo que respecta a cantidad de núcleos de 64 bits, memoria RAM y almacenamiento, bajo Ubuntu Server 16.04.2 LTS. En este contexto es **MUY importante** que se mantenga `homogenea` la estructura lógica de software, por lo que invitamos a los usuarios a solicitar al `administrador` que se instale la misma versión de software en todos los nodos de cómputo.
 
@@ -332,10 +332,20 @@ condor_q -better-analyze
 ```
 condor_rm -all
 ```
+5. Repita el ejercicio anterior de enviar 3000 hola desde hostname, modificando su mkfile para:
 
+- Creación del directorio de salida
+- Mecanismo de candado para el archivo de salida.
 
-5. Envié el trabajo real de la clase pasada, para realizar la búsqueda de secuencias con condor.
+6. Utilice la plantilla "new" para poder crear el proyecto
+
+- new -- vea las diferentes opciones
+- Cree el proyecto
+- Modifique para obtener un resultados similar al punto 5
+
+7. Utilizando la plantilla, adapte el pipeline de búsqueda de cadena en un archivo fastq con condor.
 
 ```
 git clone --branch=condormk /home/xihh/mk-debug/pato.git condor
 ```
+
