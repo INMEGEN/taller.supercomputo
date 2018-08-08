@@ -6,9 +6,9 @@
 
 <div class="incremental">
 
-  - Variables
-
   - Diseño del experimento
+
+  - Origen y tratamiento de la información
 
   - Referencias
 
@@ -136,6 +136,21 @@ nombre
 
     git checkout -b nombre version
 
+## Estos atajos nos permiten escribir comandos de git comunes más rápido
+
+Agregar a `~/.bashrc`:
+
+    alias gs="git status"
+    alias gd="git diff"
+    alias gdc="git diff --cached"
+    alias gc="git commit"
+    alias gcm="git commit -m"
+    alias ga="git add"
+    alias gp="git push"
+    alias gb="git branch"
+    alias gl="git log"
+    alias glc="git log --cc"
+
 ## Existen plataformas para compartir nuestro trabajo
 
 Compartir el álbum:
@@ -161,21 +176,6 @@ Generar un par de llaves:
         -f ~/.ssh/github
 
 Y subirlas a github.com.
-
-## Estos atajos nos permiten escribir comandos de git comunes más rápido
-
-Agregar a `~/.bashrc`:
-
-    alias gs="git status"
-    alias gd="git diff"
-    alias gdc="git diff --cached"
-    alias gc="git commit"
-    alias gcm="git commit -m"
-    alias ga="git add"
-    alias gp="git push"
-    alias gb="git branch"
-    alias gl="git log"
-    alias glc="git log --cc"
 
 ## Esta es una historia real…
 
