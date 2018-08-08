@@ -5,6 +5,15 @@ subtitle: "Principios de bioinformática"
 author: "Joshua Haase"
 ---
 
+# Conocer el número de procesadores en mi máquina
+
+```
+# linux, windows+ubuntu
+grep proc /proc/cpuinfo | wc -l
+# mac
+sysctl -n hw.ncpu
+```
+
 ### Cómo hacer un bin/targets
 
 ```
@@ -12,14 +21,13 @@ $ cat bin/targets
 #!/bin/sh
 find -L data \
 	-type f \
+	-name '*.fastq' \
 | sed -r \
 	-e 's#^../#results/#' \
 	-e 's#$#.asado#'
 ```
 
- Errores comunes
-
-## Ejercicio 2 (dónde):
+## Hay varios errores comunes
 
 Ejecutar `mk results/P_49627@C2.fastq`
 
@@ -118,3 +126,5 @@ $ tree
 ```
 
 `bin/targets` son las órdenes de los clientes.
+
+

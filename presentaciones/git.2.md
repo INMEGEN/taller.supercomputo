@@ -32,7 +32,7 @@
 
 ![](../imagenes/github-token1.png) ![](../imagenes/github-token2.png)
 ![](../imagenes/github-token3.png) ![](../imagenes/github-token4.png)
-![](../imagenes/github-token5.png) ![](../imagenes/github-token5.png)
+![](../imagenes/github-token5.png)
 
 ## Configuramos nuestra computadora para conocer nuestros usuarios
 
